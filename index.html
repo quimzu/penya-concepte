@@ -656,7 +656,7 @@ box(26 + rnd(i + 5) * 26, h, 20 + rnd(i + 9) * 22, mat.city, x, h / 2, z, rnd(i 
 const size = () => {
 const el = this.cv; if (!el) return;
 const w = el.clientWidth || 800, h = el.clientHeight || 600;
-r.setSize(w, h, false); cam.aspect = w / h; cam.updateProjectionMatrix();
+r.setSize(w, h, false); cam.aspect = w / h; cam.fov = w / h < 0.9 ? 64 : 36; cam.updateProjectionMatrix();
 };
 size();
 if (window.ResizeObserver) { this.ro = new ResizeObserver(size); this.ro.observe(this.cv); }
