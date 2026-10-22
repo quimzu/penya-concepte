@@ -164,6 +164,20 @@ a:has(>img[style*="contain"]):hover>img{transform:scale(1.04)}
 .spot:hover>img{filter:contrast(1.06) saturate(1.1)}
 }
 @media (prefers-reduced-motion:reduce){.menu,.menu ul a,.menu-cta,.menu-foot,.burger span{transition:none !important}}
+
+.shop-nav{display:none;gap:8px}
+.shop-arrow{width:52px;height:52px;border:2px solid rgba(235,237,236,.6);background:transparent;color:#EBEDEC;font-size:22px;cursor:pointer;transition:background .25s,border-color .25s}
+.shop-arrow:hover{background:#005441;border-color:#005441}
+@media (min-width:761px){
+.shop-nav{display:flex}
+.g4:has(img[style*="contain"]){display:flex !important;overflow-x:auto;scroll-snap-type:x mandatory;scroll-behavior:smooth;gap:16px !important;scrollbar-width:none;padding-bottom:12px}
+.g4:has(img[style*="contain"])::-webkit-scrollbar{display:none}
+.g4:has(img[style*="contain"])>a{flex:0 0 calc((100% - 32px) / 2.6) !important;scroll-snap-align:start;padding:0 0 22px !important;gap:14px !important}
+.g4:has(img[style*="contain"])>a>img{height:auto !important;aspect-ratio:1/1;width:100%}
+.g4:has(img[style*="contain"])>a>span{padding:0 22px}
+.g4:has(img[style*="contain"])>a>span:first-of-type{font-size:18px !important}
+.g4:has(img[style*="contain"])>a>span:last-of-type{font-size:34px !important}
+}
 </style>
 </head>
 <body>
@@ -459,6 +473,7 @@ a:has(>img[style*="contain"]):hover>img{transform:scale(1.04)}
 <div style="display: flex; justify-content: space-between; align-items: baseline; gap: 16px; flex-wrap: wrap">
 <h2 style="margin: 0; font-family: 'Bebas Neue', sans-serif; font-weight: 400; font-size: 72px; line-height: 0.9">Vesteix-te de Penya</h2>
 <a href="#" style="font-size: 14px; font-weight: 600">Botiga · enviament gratuït des de 50 € →</a>
+<div class="shop-nav"><button type="button" class="shop-arrow" data-dir="-1" aria-label="Productes anteriors">←</button><button type="button" class="shop-arrow" data-dir="1" aria-label="Més productes">→</button></div>
 </div>
 <div class="g4">
 <a href="#" style="text-decoration: none; background: #161c1b; padding: 20px; display: flex; flex-direction: column; gap: 12px">
@@ -819,6 +834,16 @@ loop();
   c.componentDidMount();
   var vid = document.querySelector('video');
   if (vid && window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) { vid.removeAttribute('autoplay'); vid.pause(); }
+})();
+</script>
+<script>
+(function(){
+  var row=document.querySelector('.shop-arrow') && Array.prototype.find.call(document.querySelectorAll('.g4'),function(g){return g.querySelector('img[style*="contain"]');});
+  if(!row) return;
+  document.querySelectorAll('.shop-arrow').forEach(function(b){b.addEventListener('click',function(){
+    var card=row.querySelector('a'); var step=card?card.getBoundingClientRect().width+16:400;
+    row.scrollBy({left:step*Number(b.dataset.dir),behavior:'smooth'});
+  });});
 })();
 </script>
 <script>
