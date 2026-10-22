@@ -134,6 +134,19 @@ body.menu-open .burger span:nth-child(1),body.menu-open .burger span:nth-child(3
 .menu ul a{font-size:clamp(64px,7.2vw,112px);line-height:.96}
 .menu-side{width:340px;padding-bottom:12px}
 }
+.menu::before{z-index:1}
+.menu-in{z-index:2}
+.menu-media{display:none}
+@media (min-width:761px) and (hover:hover){
+.menu-media{display:block;position:absolute;inset:0;z-index:0;overflow:hidden}
+.menu-media img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transform:scale(1.08);filter:grayscale(.2);transition:opacity .7s ease,transform 1.6s cubic-bezier(.2,.8,.2,1)}
+.menu-media img.on{opacity:1;transform:scale(1)}
+.menu ul:hover a{color:rgba(235,237,236,.32)}
+.menu ul a:hover{color:#EBEDEC !important}
+.menu ul a{position:relative}
+.menu ul a::after{content:"";position:absolute;left:0;bottom:6px;height:4px;width:100%;background:#5fae96;transform:scaleX(0);transform-origin:left;transition:transform .45s cubic-bezier(.2,.8,.2,1)}
+.menu ul a:hover::after{transform:scaleX(1)}
+}
 @media (hover:hover){
 .burger:hover span:nth-child(2){transform:translateX(-4px)}
 a[style*="overflow: hidden"]>img{transition:transform 1.4s cubic-bezier(.2,.8,.2,1),filter .6s}
@@ -176,8 +189,9 @@ a:has(>img[style*="contain"]):hover>img{transform:scale(1.04)}
 </div>
 </header>
 <div id="menu" class="menu" aria-hidden="true">
-<nav aria-label="Menú mòbil" class="menu-in">
-<ul><li><a href="#calendari">Pròxims partits</a></li><li><a href="#">Equips</a></li><li><a href="#">Cantera</a></li><li><a href="#olimpic">L'Olímpic</a></li><li><a href="#">Botiga</a></li><li><a href="#socis">Socis</a></li><li><a href="#">Notícies</a></li></ul>
+<div class="menu-media" aria-hidden="true"><img src="assets/esmaixada.jpg" alt="" data-i="0" loading="lazy"><img src="assets/celebracio.jpg" alt="" data-i="1" loading="lazy"><img src="assets/ricky.jpg" alt="" data-i="2" loading="lazy"><img src="assets/grada.jpg" alt="" data-i="3" loading="lazy"><img src="assets/pinya.jpg" alt="" data-i="4" loading="lazy"><img src="assets/grup.jpg" alt="" data-i="5" loading="lazy"><img src="assets/bcl.jpg" alt="" data-i="6" loading="lazy"></div>
+<nav aria-label="Menú principal" class="menu-in">
+<ul><li><a href="#calendari" data-i="0">Pròxims partits</a></li><li><a href="#" data-i="1">Equips</a></li><li><a href="#" data-i="2">Cantera</a></li><li><a href="#olimpic" data-i="3">L'Olímpic</a></li><li><a href="#" data-i="4">Botiga</a></li><li><a href="#socis" data-i="5">Socis</a></li><li><a href="#" data-i="6">Notícies</a></li></ul>
 <div class="menu-side"><div class="menu-cta"><a href="#calendari" class="m-btn m-solid">Entrades</a><a href="#" class="m-btn">Botiga</a></div>
 <div class="menu-foot"><a href="#">Instagram</a><a href="#">TikTok</a><a href="#">YouTube</a><a href="#">X</a></div></div>
 </nav>
@@ -813,6 +827,10 @@ loop();
   b.addEventListener('click',function(){set(!document.body.classList.contains('menu-open'));});
   m.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){set(false);});});
   document.addEventListener('keydown',function(e){if(e.key==='Escape')set(false);});
+  var imgs=m.querySelectorAll('.menu-media img');
+  var show=function(i){imgs.forEach(function(im){im.classList.toggle('on',im.dataset.i===i);});};
+  m.querySelectorAll('ul a').forEach(function(a){a.addEventListener('mouseenter',function(){show(a.dataset.i);});a.addEventListener('focus',function(){show(a.dataset.i);});});
+  m.querySelector('ul').addEventListener('mouseleave',function(){show(null);});
 })();
 </script>
 </body>
