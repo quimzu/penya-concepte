@@ -47,10 +47,43 @@ a{color:#EBEDEC}a:hover{color:#ffffff}
 .seg[aria-pressed="true"]{background:#005441}
 .seg:focus-visible,#btn-roof:focus-visible,#btn-spin:focus-visible,a:focus-visible{outline:2px solid #5fae96;outline-offset:2px}
 #site-header{position:absolute}
+html,body{overflow-x:hidden}
+img,video,canvas{max-width:100%}
+@media (max-width:1100px){
+h1{font-size:112px !important}
+h2{font-size:clamp(56px,8vw,96px) !important}
+}
+@media (max-width:760px){
+.bl{display:none}
+#site-header>.wrap{height:72px !important}
+#site-header img{height:48px !important}
+section{padding-top:56px !important;padding-bottom:56px !important}
+section:first-of-type{padding-top:0 !important;padding-bottom:0 !important;min-height:640px !important}
+section:first-of-type .wrap{padding-bottom:28px !important;gap:18px !important}
+h1{font-size:clamp(56px,17vw,76px) !important}
+h2{font-size:clamp(44px,13vw,60px) !important;line-height:0.9 !important}
+h3{font-size:44px !important}
+p{font-size:16px !important}
+.cd>div>div:first-child{font-size:40px !important}
+.cd>div{padding:10px 6px !important}
+.g4>a{height:260px !important}
+.g3>a{height:300px !important}
+.wk>div{height:260px !important}
+.spot>img{height:420px !important}
+.spot>div{padding:40px 16px !important}
+.spot span[aria-hidden]{font-size:300px !important}
+.arena>div:first-child>div:first-child{height:400px !important}
+#olimpic .facts span:first-child{font-size:36px !important}
+.g2>div{padding:28px 20px !important}
+.g2{margin-top:-40px !important}
+.g4 img[style*="contain"]{height:150px !important}
+.score span{font-size:26px !important}
+footer span[style*="font-size: 64px"]{font-size:40px !important}
+}
 </style>
 </head>
 <body>
-<div style="background: #EBEDEC; color: #000000; font-family: Montserrat, sans-serif; font-size: 12px; font-weight: 600; text-align: center; padding: 8px 16px; position: relative; z-index: 20">Concepte de disseny no oficial · Proposta de redisseny del web del Club Joventut Badalona per Boira.studio</div>
+<div style="background: #EBEDEC; color: #000000; font-family: Montserrat, sans-serif; font-size: 12px; font-weight: 600; text-align: center; padding: 8px 16px; position: relative; z-index: 20">Concepte de disseny no oficial<span class="bl"> · Proposta de redisseny del web del Club Joventut Badalona per Boira.studio</span></div>
 <div style="font-family: Montserrat, sans-serif; color: #EBEDEC; background: #000000">
 
 <header id="site-header" style="position: absolute; left: 0; right: 0; top: 34px; z-index: 5">
