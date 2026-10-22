@@ -92,7 +92,7 @@ p{font-size:16px !important}
 .g4:has(img[style*="contain"]){display:flex !important;overflow-x:auto;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;gap:10px !important;margin-right:-16px;padding-right:16px;scrollbar-width:none}
 .g4:has(img[style*="contain"])::-webkit-scrollbar{display:none}
 .g4:has(img[style*="contain"])>a{flex:0 0 78% !important;scroll-snap-align:start}
-.g4 img[style*="contain"]{height:320px !important}
+.g4 .pimg{height:320px !important}
 .g4:has(img[style*="contain"])>a>span:first-of-type{font-size:16px !important}
 .g4:has(img[style*="contain"])>a>span:last-of-type{font-size:32px !important}
 .score span{font-size:26px !important}
@@ -156,10 +156,14 @@ a[style*="overflow: hidden"]>div[style*="bottom"]{transition:transform .5s cubic
 a[style*="overflow: hidden"]:hover>div[style*="bottom"]{transform:translateY(-6px)}
 a[style*="overflow: hidden"]::after{content:"";position:absolute;left:0;bottom:0;height:4px;width:100%;background:#5fae96;transform:scaleX(0);transform-origin:left;transition:transform .6s cubic-bezier(.2,.8,.2,1)}
 a[style*="overflow: hidden"]:hover::after{transform:scaleX(1)}
-a:has(>img[style*="contain"]){transition:transform .45s cubic-bezier(.2,.8,.2,1),box-shadow .45s}
-a:has(>img[style*="contain"])>img{transition:transform .9s cubic-bezier(.2,.8,.2,1)}
-a:has(>img[style*="contain"]):hover{transform:translateY(-6px);box-shadow:0 18px 40px rgba(0,0,0,.45)}
-a:has(>img[style*="contain"]):hover>img{transform:scale(1.04)}
+a:has(.pimg){transition:transform .45s cubic-bezier(.2,.8,.2,1),box-shadow .45s}
+a:has(.pimg):hover{transform:translateY(-6px);box-shadow:0 18px 40px rgba(0,0,0,.45)}
+.pimg .worn{clip-path:circle(0% at var(--x,50%) var(--y,50%));transition:clip-path .8s cubic-bezier(.2,.8,.2,1)}
+.pimg .worn-img{transform:scale(1.12);transition:transform 1.4s cubic-bezier(.2,.8,.2,1)}
+a:hover .pimg .worn{clip-path:circle(142% at var(--x,50%) var(--y,50%))}
+a:hover .pimg .worn-img{transform:scale(1)}
+.pimg .prod{transition:transform .9s cubic-bezier(.2,.8,.2,1)}
+a:hover .pimg .prod{transform:scale(.92)}
 .spot>img{transition:filter .8s}
 .spot:hover>img{filter:contrast(1.06) saturate(1.1)}
 }
@@ -173,11 +177,17 @@ a:has(>img[style*="contain"]):hover>img{transform:scale(1.04)}
 .g4:has(img[style*="contain"]){display:flex !important;overflow-x:auto;scroll-snap-type:x mandatory;scroll-behavior:smooth;gap:16px !important;scrollbar-width:none;padding-bottom:12px}
 .g4:has(img[style*="contain"])::-webkit-scrollbar{display:none}
 .g4:has(img[style*="contain"])>a{flex:0 0 calc((100% - 32px) / 2.6) !important;scroll-snap-align:start;padding:0 0 22px !important;gap:14px !important}
-.g4:has(img[style*="contain"])>a>img{height:auto !important;aspect-ratio:1/1;width:100%}
+.g4 .pimg{height:auto !important;aspect-ratio:1/1;width:100%}
 .g4:has(img[style*="contain"])>a>span{padding:0 22px}
 .g4:has(img[style*="contain"])>a>span:first-of-type{font-size:18px !important}
 .g4:has(img[style*="contain"])>a>span:last-of-type{font-size:34px !important}
 }
+
+.pimg{position:relative;overflow:hidden;background:#ffffff;width:100%;height:240px;flex:0 0 auto}
+.pimg>img.prod{position:absolute;inset:0;width:100% !important;height:100% !important;object-fit:contain}
+.pimg .worn{position:absolute;inset:0;overflow:hidden}
+.pimg .worn-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.pimg .worn-tag{position:absolute;left:12px;bottom:12px;background:#005441;color:#EBEDEC;font-family:Montserrat,sans-serif;font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;padding:6px 10px}
 </style>
 </head>
 <body>
@@ -477,22 +487,22 @@ a:has(>img[style*="contain"]):hover>img{transform:scale(1.04)}
 </div>
 <div class="g4">
 <a href="#" style="text-decoration: none; background: #161c1b; padding: 20px; display: flex; flex-direction: column; gap: 12px">
-<img src="assets/prod1.jpg" alt="1a samarreta de joc 26-27" style="width: 100%; height: 240px; object-fit: contain; background: #ffffff; display: block">
+<div class="pimg"><img src="assets/prod1.jpg" alt="1a samarreta de joc 26-27" class="prod" style="object-fit: contain"><div class="worn" aria-hidden="true"><img class="worn-img" src="assets/tir.jpg" alt="" loading="lazy" style="object-position:center 30%"><span class="worn-tag">A la pista</span></div></div>
 <span style="font-weight: 600; font-size: 14px">1a samarreta 26-27</span>
 <span style="font-family: 'Bebas Neue', sans-serif; font-size: 26px; color: #5fae96">74,99 €</span>
 </a>
 <a href="#" style="text-decoration: none; background: #161c1b; padding: 20px; display: flex; flex-direction: column; gap: 12px">
-<img src="assets/prod2.jpg" alt="2a samarreta de joc 26-27" style="width: 100%; height: 240px; object-fit: contain; background: #ffffff; display: block">
+<div class="pimg"><img src="assets/prod2.jpg" alt="2a samarreta de joc 26-27" class="prod" style="object-fit: contain"><div class="worn" aria-hidden="true"><img class="worn-img" src="assets/femeni.jpg" alt="" loading="lazy" style="object-position:center 30%"><span class="worn-tag">A la pista</span></div></div>
 <span style="font-weight: 600; font-size: 14px">2a samarreta 26-27</span>
 <span style="font-family: 'Bebas Neue', sans-serif; font-size: 26px; color: #5fae96">74,99 €</span>
 </a>
 <a href="#" style="text-decoration: none; background: #161c1b; padding: 20px; display: flex; flex-direction: column; gap: 12px">
-<img src="assets/prod3.jpg" alt="Samarreta d'escalfament" style="width: 100%; height: 240px; object-fit: contain; background: #ffffff; display: block">
+<div class="pimg"><img src="assets/prod3.jpg" alt="Samarreta d'escalfament" class="prod" style="object-fit: contain"><div class="worn" aria-hidden="true"><img class="worn-img" src="assets/pinya.jpg" alt="" loading="lazy" style="object-position:center 35%"><span class="worn-tag">A la pista</span></div></div>
 <span style="font-weight: 600; font-size: 14px">Samarreta d'escalfament</span>
 <span style="font-family: 'Bebas Neue', sans-serif; font-size: 26px; color: #5fae96">64,99 €</span>
 </a>
 <a href="#" style="text-decoration: none; background: #161c1b; padding: 20px; display: flex; flex-direction: column; gap: 12px">
-<img src="assets/prod4.jpg" alt="1r pantaló de joc" style="width: 100%; height: 240px; object-fit: contain; background: #ffffff; display: block">
+<div class="pimg"><img src="assets/prod4.jpg" alt="1r pantaló de joc" class="prod" style="object-fit: contain"><div class="worn" aria-hidden="true"><img class="worn-img" src="assets/esmaixada.jpg" alt="" loading="lazy" style="object-position:center 60%"><span class="worn-tag">A la pista</span></div></div>
 <span style="font-weight: 600; font-size: 14px">1r pantaló de joc</span>
 <span style="font-family: 'Bebas Neue', sans-serif; font-size: 26px; color: #5fae96">49,99 €</span>
 </a>
@@ -868,6 +878,12 @@ loop();
   m.querySelectorAll('ul a').forEach(function(a){a.addEventListener('mouseenter',function(){show(a.dataset.i);});a.addEventListener('focus',function(){show(a.dataset.i);});});
   m.querySelector('ul').addEventListener('mouseleave',function(){show(null);});
 })();
+</script>
+<script>
+document.querySelectorAll('.pimg').forEach(function(p){
+  var a=p.closest('a'); if(!a) return;
+  a.addEventListener('mouseenter',function(e){var r=p.getBoundingClientRect();p.style.setProperty('--x',((e.clientX-r.left)/r.width*100)+'%');p.style.setProperty('--y',((e.clientY-r.top)/r.height*100)+'%');});
+});
 </script>
 </body>
 </html>
