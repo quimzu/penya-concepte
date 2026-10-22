@@ -1,0 +1,699 @@
+<!doctype html>
+<html lang="ca">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Penya · Concepte de web (proposta Boira.studio)</title>
+<meta name="description" content="Concepte de disseny no oficial per a un nou web del Club Joventut Badalona.">
+<meta property="og:title" content="Penya · Concepte de web">
+<meta property="og:description" content="Proposta de redisseny no oficial del web del Club Joventut Badalona, per Boira.studio.">
+<meta property="og:image" content="assets/hero.jpg">
+<link rel="icon" type="image/png" href="assets/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&amp;family=Montserrat:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0;background:#000000}
+a{color:#EBEDEC}a:hover{color:#ffffff}
+.wrap{max-width:1280px;margin:0 auto;padding:0 40px;box-sizing:border-box}
+.cd{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:2px}
+.score{display:grid;grid-template-columns:minmax(0,1fr) auto minmax(0,1fr) auto;gap:24px;align-items:center}
+.cal{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:2px}
+.wk{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:2px}
+.g2{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:2px}
+.g3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:2px}
+.g4{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:2px}
+.spot{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);align-items:stretch}
+.arena{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(0,1fr);gap:48px;align-items:center}
+.facts{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:2px}
+.stage{height:600px;perspective:1600px;display:flex;align-items:center;justify-content:center;overflow:hidden}
+.scale3d{transform-style:preserve-3d}
+@keyframes spinz{from{transform:rotateZ(0deg)}to{transform:rotateZ(360deg)}}
+.spin{position:relative;width:640px;height:520px;transform-style:preserve-3d;animation:spinz 36s linear infinite}
+.nospin{position:relative;width:640px;height:520px;transform-style:preserve-3d;transform:rotateZ(-24deg)}
+.sm-hide{display:flex}
+@media (max-width:900px){
+.g2,.g3,.spot,.arena,.wk{grid-template-columns:minmax(0,1fr)}
+.g4,.cd{grid-template-columns:repeat(2,minmax(0,1fr))}
+.score{grid-template-columns:minmax(0,1fr) auto}
+.wrap{padding:0 16px}
+.sm-hide{display:none}
+.stage{height:380px}
+.scale3d{zoom:0.55}
+}
+</style>
+<style>
+.seg{background:#000000;color:#EBEDEC;border:0;padding:12px 20px;min-height:44px;font-family:'Bebas Neue',sans-serif;font-size:20px;letter-spacing:0.08em;cursor:pointer}
+.seg[aria-pressed="true"]{background:#005441}
+.seg:focus-visible,#btn-roof:focus-visible,#btn-spin:focus-visible,a:focus-visible{outline:2px solid #5fae96;outline-offset:2px}
+#site-header{position:absolute}
+</style>
+</head>
+<body>
+<div style="background: #EBEDEC; color: #000000; font-family: Montserrat, sans-serif; font-size: 12px; font-weight: 600; text-align: center; padding: 8px 16px; position: relative; z-index: 20">Concepte de disseny no oficial · Proposta de redisseny del web del Club Joventut Badalona per Boira.studio</div>
+<div style="font-family: Montserrat, sans-serif; color: #EBEDEC; background: #000000">
+
+<header id="site-header" style="position: absolute; left: 0; right: 0; top: 34px; z-index: 5">
+<div class="wrap" style="display: flex; justify-content: space-between; align-items: center; height: 96px; gap: 24px">
+<div style="display: flex; align-items: center; gap: 36px">
+<img src="assets/escut.png" alt="Escut del Club Joventut Badalona" style="height: 64px; width: auto; display: block">
+<nav class="sm-hide" aria-label="Principal" style="gap: 28px; font-family: 'Bebas Neue', sans-serif; font-size: 20px; letter-spacing: 0.08em">
+<a href="#calendari" style="text-decoration: none">Partits</a>
+<a href="#" style="text-decoration: none">Equips</a>
+<a href="#" style="text-decoration: none">Cantera</a>
+<a href="#olimpic" style="text-decoration: none">L'Olímpic</a>
+<a href="#" style="text-decoration: none">Botiga</a>
+</nav>
+</div>
+<div style="display: flex; align-items: center; gap: 16px">
+<a href="#" class="sm-hide" style="font-size: 13px; font-weight: 600; text-decoration: none">Accedeix</a>
+<a href="#socis" style="border: 2px solid #EBEDEC; text-decoration: none; padding: 10px 18px; font-family: 'Bebas Neue', sans-serif; font-size: 20px; letter-spacing: 0.08em; line-height: 1">Fes-te soci</a>
+</div>
+</div>
+</header>
+
+<section style="position: relative; min-height: 820px; display: flex; align-items: flex-end">
+<img src="assets/hero.jpg" alt="Laprovíttola celebrant amb els braços enlaire a l'Olímpic" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 62% 22%">
+<div style="position: absolute; inset: 0; background: linear-gradient(90deg, rgba(0,0,0,0.75) 0%, rgba(0,0,0,0.25) 45%, rgba(0,0,0,0) 70%)"></div>
+<div style="position: absolute; inset: 0; background: linear-gradient(180deg, rgba(0,0,0,0.55) 0%, rgba(0,0,0,0) 25%, rgba(0,0,0,0) 55%, rgba(0,0,0,0.9) 92%)"></div>
+<div class="wrap" style="position: relative; width: 100%; padding-bottom: 56px; display: flex; flex-direction: column; gap: 28px">
+<span style="display: inline-flex; align-self: flex-start; background: #005441; padding: 8px 14px; font-size: 12px; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase">Matchday · Lliga Endesa J6</span>
+<h1 style="margin: 0; font-family: 'Bebas Neue', sans-serif; font-weight: 400; font-size: 152px; line-height: 0.84">Joventut<br><span style="color: #5fae96">vs</span> Bilbao</h1>
+<div style="display: flex; gap: 32px; align-items: flex-end; flex-wrap: wrap">
+<div class="cd" style="background: rgba(235,237,236,0.12); max-width: 520px; flex: 1 1 360px">
+<div style="background: rgba(0,0,0,0.78); padding: 16px 12px; text-align: center"><div style="font-family: 'Bebas Neue', sans-serif; font-size: 56px; line-height: 1"><span id="cd-d">00</span></div><div style="font-size: 11px; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; opacity: 0.8">Dies</div></div>
+<div style="background: rgba(0,0,0,0.78); padding: 16px 12px; text-align: center"><div style="font-family: 'Bebas Neue', sans-serif; font-size: 56px; line-height: 1"><span id="cd-h">00</span></div><div style="font-size: 11px; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; opacity: 0.8">Hores</div></div>
+<div style="background: rgba(0,0,0,0.78); padding: 16px 12px; text-align: center"><div style="font-family: 'Bebas Neue', sans-serif; font-size: 56px; line-height: 1"><span id="cd-m">00</span></div><div style="font-size: 11px; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; opacity: 0.8">Minuts</div></div>
+<div style="background: #005441; padding: 16px 12px; text-align: center"><div style="font-family: 'Bebas Neue', sans-serif; font-size: 56px; line-height: 1"><span id="cd-s">00</span></div><div style="font-size: 11px; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; opacity: 0.9">Segons</div></div>
+</div>
+<div style="display: flex; flex-direction: column; gap: 10px">
+<a href="#" style="background: #005441; text-decoration: none; padding: 20px 40px; font-family: 'Bebas Neue', sans-serif; font-size: 28px; letter-spacing: 0.08em; text-align: center">Comprar entrades</a>
+<span style="font-size: 13px; opacity: 0.9">Diumenge 1 de novembre · 12:00 · Palau Olímpic</span>
+</div>
+</div>
+</div>
+</section>
+
+<section id="calendari" style="padding: 80px 0 56px; background: #000000">
+<div class="wrap" style="display: flex; flex-direction: column; gap: 24px">
+<div style="display: flex; justify-content: space-between; align-items: flex-end; gap: 16px; flex-wrap: wrap">
+<div style="display: flex; flex-direction: column; gap: 6px">
+<span style="font-size: 12px; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: #5fae96"><span id="team-name">Primer equip · Lliga Endesa</span></span>
+<h2 style="margin: 0; font-family: 'Bebas Neue', sans-serif; font-weight: 400; font-size: 72px; line-height: 0.9">Pròxims partits</h2>
+</div>
+<div role="group" aria-label="Tria l'equip" style="display: flex; gap: 2px; flex-wrap: wrap; background: rgba(235,237,236,0.15)">
+<button type="button" class="seg" data-team="masc" aria-pressed="true">Primer equip</button><button type="button" class="seg" data-team="fem" aria-pressed="false">Femení</button><button type="button" class="seg" data-team="u22" aria-pressed="false">U22</button><button type="button" class="seg" data-team="bcr" aria-pressed="false">Menarini BCR</button>
+</div>
+</div>
+<div style="display: flex; flex-direction: column; gap: 2px">
+<div id="match-list" style="display: flex; flex-direction: column; gap: 2px"></div>
+</div>
+<a href="#" style="align-self: flex-start; font-size: 14px; font-weight: 600">Calendari complet →</a>
+</div>
+</section>
+
+<section style="padding: 32px 0 88px; background: #000000">
+<div class="wrap" style="display: flex; flex-direction: column; gap: 28px">
+<div style="display: flex; justify-content: space-between; align-items: flex-end; gap: 16px; flex-wrap: wrap; border-top: 1px solid rgba(235,237,236,0.15); padding-top: 56px">
+<h2 style="margin: 0; font-family: 'Bebas Neue', sans-serif; font-weight: 400; font-size: 104px; line-height: 0.86">4 equips,<br><span style="color: #5fae96">un sol sentiment</span></h2>
+<span style="font-size: 15px; opacity: 0.85; max-width: 320px">Quatre equips, la mateixa samarreta verd-i-negra.</span>
+</div>
+<div class="g4">
+<a href="#" style="position: relative; display: block; height: 480px; overflow: hidden; text-decoration: none">
+<img src="assets/celebracio.jpg" alt="Equip masculí" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover">
+<div style="position: absolute; inset: 0; background: linear-gradient(0deg, rgba(0,0,0,0.92) 0%, rgba(0,0,0,0) 55%)"></div>
+<div style="position: absolute; left: 22px; right: 22px; bottom: 22px; display: flex; flex-direction: column; gap: 4px">
+<span style="font-family: 'Bebas Neue', sans-serif; font-size: 44px; line-height: 1">Primer equip</span>
+<span style="font-size: 13px; color: #5fae96; font-weight: 600">Lliga Endesa · BCL</span>
+</div>
+</a>
+<a href="#" style="position: relative; display: block; height: 480px; overflow: hidden; text-decoration: none">
+<img src="assets/femeni.jpg" alt="Equip femení" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover">
+<div style="position: absolute; inset: 0; background: linear-gradient(0deg, rgba(0,0,0,0.92) 0%, rgba(0,0,0,0) 55%)"></div>
+<div style="position: absolute; left: 22px; right: 22px; bottom: 22px; display: flex; flex-direction: column; gap: 4px">
+<span style="font-family: 'Bebas Neue', sans-serif; font-size: 44px; line-height: 1">Femení</span>
+<span style="font-size: 13px; color: #5fae96; font-weight: 600">LF Challenge · Invicte</span>
+</div>
+</a>
+<a href="#" style="position: relative; display: block; height: 480px; overflow: hidden; text-decoration: none">
+<img src="assets/u22.jpg" alt="Equip U22" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover">
+<div style="position: absolute; inset: 0; background: linear-gradient(0deg, rgba(0,0,0,0.92) 0%, rgba(0,0,0,0) 55%)"></div>
+<div style="position: absolute; left: 22px; right: 22px; bottom: 22px; display: flex; flex-direction: column; gap: 4px">
+<span style="font-family: 'Bebas Neue', sans-serif; font-size: 44px; line-height: 1">U22</span>
+<span style="font-size: 13px; color: #5fae96; font-weight: 600">Lliga U</span>
+</div>
+</a>
+<a href="#" style="position: relative; display: block; height: 480px; overflow: hidden; text-decoration: none">
+<img src="assets/bcr.jpg" alt="Menarini BCR" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover">
+<div style="position: absolute; inset: 0; background: linear-gradient(0deg, rgba(0,0,0,0.92) 0%, rgba(0,0,0,0) 55%)"></div>
+<div style="position: absolute; left: 22px; right: 22px; bottom: 22px; display: flex; flex-direction: column; gap: 4px">
+<span style="font-family: 'Bebas Neue', sans-serif; font-size: 44px; line-height: 1">Menarini BCR</span>
+<span style="font-size: 13px; color: #5fae96; font-weight: 600">Superlliga BSR</span>
+</div>
+</a>
+</div>
+</div>
+</section>
+
+<section style="background: #005441; padding: 72px 0">
+<div class="wrap" style="display: flex; flex-direction: column; gap: 28px">
+<div style="display: flex; justify-content: space-between; align-items: flex-end; gap: 24px; flex-wrap: wrap">
+<div style="display: flex; flex-direction: column; gap: 8px">
+<span style="font-size: 12px; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase">30 oct – 1 nov · Palau Olímpic</span>
+<h2 style="margin: 0; font-family: 'Bebas Neue', sans-serif; font-weight: 400; font-size: 88px; line-height: 0.88">3 partits, 3 dies.<br>Cap de setmana verd-i-negre</h2>
+</div>
+<a href="#" style="background: #000000; text-decoration: none; padding: 18px 28px; font-family: 'Bebas Neue', sans-serif; font-size: 24px; letter-spacing: 0.08em">Pack cap de setmana · 39 €</a>
+</div>
+<div class="wk">
+<div style="position: relative; height: 320px; overflow: hidden; background: #000000">
+<img src="assets/u22.jpg" alt="La Penya U22" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0.75">
+<div style="position: absolute; inset: 0; background: linear-gradient(0deg, rgba(0,0,0,0.92) 0%, rgba(0,0,0,0) 65%)"></div>
+<div style="position: absolute; left: 22px; right: 22px; bottom: 22px; display: flex; flex-direction: column; gap: 6px">
+<span style="font-size: 11px; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: #5fae96">Divendres 30 · 20:15 · Lliga U J6</span>
+<span style="font-family: 'Bebas Neue', sans-serif; font-size: 34px; line-height: 1">U22 vs UCAM Murcia Juver</span>
+<a href="#" style="font-size: 13px; font-weight: 600">Entrades →</a>
+</div>
+</div>
+<div style="position: relative; height: 320px; overflow: hidden; background: #000000">
+<img src="assets/femeni.jpg" alt="El Joventut femení" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0.75">
+<div style="position: absolute; inset: 0; background: linear-gradient(0deg, rgba(0,0,0,0.92) 0%, rgba(0,0,0,0) 65%)"></div>
+<div style="position: absolute; left: 22px; right: 22px; bottom: 22px; display: flex; flex-direction: column; gap: 6px">
+<span style="font-size: 11px; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: #5fae96">Dissabte 31 · 19:00 · LF Challenge J8</span>
+<span style="font-family: 'Bebas Neue', sans-serif; font-size: 34px; line-height: 1">Femení vs Recoletas Zamora</span>
+<a href="#" style="font-size: 13px; font-weight: 600">Entrades →</a>
+</div>
+</div>
+<div style="position: relative; height: 320px; overflow: hidden; background: #000000">
+<img src="assets/celebracio.jpg" alt="El primer equip celebrant" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0.75">
+<div style="position: absolute; inset: 0; background: linear-gradient(0deg, rgba(0,0,0,0.92) 0%, rgba(0,0,0,0) 65%)"></div>
+<div style="position: absolute; left: 22px; right: 22px; bottom: 22px; display: flex; flex-direction: column; gap: 6px">
+<span style="font-size: 11px; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: #5fae96">Diumenge 1 · 12:00 · Lliga Endesa J6</span>
+<span style="font-family: 'Bebas Neue', sans-serif; font-size: 34px; line-height: 1">Asisa Joventut vs Surne Bilbao</span>
+<a href="#" style="font-size: 13px; font-weight: 600">Entrades →</a>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<section style="padding: 72px 0; background: #000000">
+<div class="wrap" style="display: flex; flex-direction: column; gap: 2px">
+<div style="display: flex; justify-content: space-between; align-items: baseline; padding-bottom: 20px; gap: 16px; flex-wrap: wrap">
+<h2 style="margin: 0; font-family: 'Bebas Neue', sans-serif; font-weight: 400; font-size: 56px">Marcador</h2>
+<span style="font-size: 14px; font-weight: 600">Lliga Endesa: 8a · 2-2 · BCL: 2-0</span>
+</div>
+<div class="score" style="background: #111614; padding: 22px 28px; border-left: 6px solid #005441">
+<span style="font-family: 'Bebas Neue', sans-serif; font-size: 34px">Asisa Joventut <span style="color: #5fae96">113</span></span>
+<span class="sm-hide" style="font-size: 12px; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; opacity: 0.7">Lliga Endesa · J4 · 18 oct</span>
+<span style="font-family: 'Bebas Neue', sans-serif; font-size: 34px; opacity: 0.7">89 Barça</span>
+<a href="#" style="font-size: 13px; font-weight: 600">Vídeo resum</a>
+</div>
+<div class="score" style="background: #111614; padding: 22px 28px; border-left: 6px solid #005441">
+<span style="font-family: 'Bebas Neue', sans-serif; font-size: 34px">Asisa Joventut <span style="color: #5fae96">76</span></span>
+<span class="sm-hide" style="font-size: 12px; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; opacity: 0.7">BCL · J2 · 21 oct</span>
+<span style="font-family: 'Bebas Neue', sans-serif; font-size: 34px; opacity: 0.7">74 Telekom Bonn</span>
+<a href="#" style="font-size: 13px; font-weight: 600">Vídeo resum</a>
+</div>
+<div class="score" style="background: #111614; padding: 22px 28px; border-left: 6px solid #005441">
+<span style="font-family: 'Bebas Neue', sans-serif; font-size: 34px">Asisa Joventut <span style="color: #5fae96">96</span></span>
+<span class="sm-hide" style="font-size: 12px; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; opacity: 0.7">Lliga Endesa · J2 · 14 oct</span>
+<span style="font-family: 'Bebas Neue', sans-serif; font-size: 34px; opacity: 0.7">75 MoraBanc Andorra</span>
+<a href="#" style="font-size: 13px; font-weight: 600">Vídeo resum</a>
+</div>
+<div class="score" style="background: #111614; padding: 22px 28px; border-left: 6px solid #3d4240">
+<span style="font-family: 'Bebas Neue', sans-serif; font-size: 34px; opacity: 0.7">Kosner Baskonia 93</span>
+<span class="sm-hide" style="font-size: 12px; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; opacity: 0.7">Lliga Endesa · J3 · 11 oct</span>
+<span style="font-family: 'Bebas Neue', sans-serif; font-size: 34px">73 Asisa Joventut</span>
+<a href="#" style="font-size: 13px; font-weight: 600">Vídeo resum</a>
+</div>
+</div>
+</section>
+
+<section class="spot" style="background: #005441">
+<img src="assets/ricky.jpg" alt="Ricky Rubio amb la samarreta de la Penya" style="width: 100%; height: 720px; object-fit: cover; object-position: center 15%; display: block">
+<div style="position: relative; padding: 72px 56px; display: flex; flex-direction: column; justify-content: center; gap: 24px; overflow: hidden">
+<span aria-hidden="true" style="position: absolute; right: -20px; bottom: -80px; font-family: 'Bebas Neue', sans-serif; font-size: 520px; line-height: 1; color: rgba(0,0,0,0.25)">9</span>
+<span style="position: relative; font-size: 12px; font-weight: 700; letter-spacing: 0.24em; text-transform: uppercase">Fets a Badalona</span>
+<h2 style="position: relative; margin: 0; font-family: 'Bebas Neue', sans-serif; font-weight: 400; font-size: 112px; line-height: 0.86">Ricky<br>ha tornat.<br>I els títols<br>també.</h2>
+<p style="position: relative; margin: 0; font-size: 17px; line-height: 1.6; max-width: 420px">Va sortir de la nostra cantera, va tornar a casa amb el 9 i, dos anys després, ha aixecat el primer títol de la Penya en 18 anys. La història que només pot explicar la Penya.</p>
+<div style="position: relative; display: flex; gap: 16px; flex-wrap: wrap">
+<a href="#" style="background: #000000; text-decoration: none; padding: 16px 24px; font-family: 'Bebas Neue', sans-serif; font-size: 22px; letter-spacing: 0.08em">Mira el documental</a>
+<a href="#" style="border: 2px solid #EBEDEC; text-decoration: none; padding: 14px 24px; font-family: 'Bebas Neue', sans-serif; font-size: 22px; letter-spacing: 0.08em">Plantilla</a>
+</div>
+</div>
+</section>
+
+<section style="padding: 72px 0; background: #000000">
+<div class="wrap" style="display: flex; flex-direction: column; gap: 24px">
+<div style="display: flex; justify-content: space-between; align-items: baseline; gap: 16px; flex-wrap: wrap">
+<h2 style="margin: 0; font-family: 'Bebas Neue', sans-serif; font-weight: 400; font-size: 56px">Última hora</h2>
+<a href="#" style="font-size: 14px; font-weight: 600">Totes les notícies →</a>
+</div>
+<div class="g3">
+<a href="#" style="position: relative; display: block; text-decoration: none; height: 400px; overflow: hidden">
+<img src="assets/bcl.jpg" alt="Partit de BCL" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover">
+<div style="position: absolute; inset: 0; background: linear-gradient(0deg, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0) 60%)"></div>
+<div style="position: absolute; left: 24px; right: 24px; bottom: 24px; display: flex; flex-direction: column; gap: 8px">
+<span style="font-size: 11px; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: #5fae96">BCL</span>
+<span style="font-family: 'Bebas Neue', sans-serif; font-size: 32px; line-height: 1">Continuem invictes a Europa</span>
+</div>
+</a>
+<a href="#" style="position: relative; display: block; text-decoration: none; height: 400px; overflow: hidden">
+<img src="assets/bcr_premi.jpg" alt="El Menarini Joventut rep el Trofeu Campions" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover">
+<div style="position: absolute; inset: 0; background: linear-gradient(0deg, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0) 60%)"></div>
+<div style="position: absolute; left: 24px; right: 24px; bottom: 24px; display: flex; flex-direction: column; gap: 8px">
+<span style="font-size: 11px; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: #5fae96">Menarini BCR</span>
+<span style="font-family: 'Bebas Neue', sans-serif; font-size: 32px; line-height: 1">Trofeu Campions per al Menarini</span>
+</div>
+</a>
+<a href="#" style="position: relative; display: block; text-decoration: none; height: 400px; overflow: hidden">
+<img src="assets/tir.jpg" alt="Llançament a l'Olímpic" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover">
+<div style="position: absolute; inset: 0; background: linear-gradient(0deg, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0) 60%)"></div>
+<div style="position: absolute; left: 24px; right: 24px; bottom: 24px; display: flex; flex-direction: column; gap: 8px">
+<span style="font-size: 11px; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: #5fae96">Lliga Endesa</span>
+<span style="font-family: 'Bebas Neue', sans-serif; font-size: 32px; line-height: 1">113 punts contra el Barça: la crònica</span>
+</div>
+</a>
+</div>
+</div>
+</section>
+
+<section style="position: relative; min-height: 760px; display: flex; align-items: center; overflow: hidden; background: #000000">
+<video src="assets/grada.mp4" poster="assets/grada_poster.jpg" autoplay="" muted="" loop="" playsinline="" aria-label="L'afició de la Penya fent l'onada amb els braços a l'Olímpic" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover"></video>
+<div style="position: absolute; inset: 0; background: linear-gradient(0deg, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.35) 50%, rgba(0,0,0,0.55) 100%)"></div>
+<div class="wrap" style="position: relative; width: 100%; display: flex; flex-direction: column; align-items: center; text-align: center; gap: 24px; padding-top: 96px; padding-bottom: 96px">
+<span style="display: inline-flex; background: #005441; padding: 8px 14px; font-size: 12px; font-weight: 700; letter-spacing: 0.24em; text-transform: uppercase">L'Olímpic, ple</span>
+<h2 style="margin: 0; font-family: 'Bebas Neue', sans-serif; font-weight: 400; font-size: 168px; line-height: 0.84">Aquesta grada<br>et necessita!</h2>
+<p style="margin: 0; font-size: 19px; line-height: 1.6; max-width: 560px">12.500 veus verd-i-negres. Falta la teva.</p>
+<div style="display: flex; gap: 16px; flex-wrap: wrap; justify-content: center">
+<a href="#socis" style="background: #005441; text-decoration: none; padding: 18px 36px; font-family: 'Bebas Neue', sans-serif; font-size: 26px; letter-spacing: 0.08em">Fes-te soci</a>
+<a href="#" style="border: 2px solid #EBEDEC; text-decoration: none; padding: 16px 32px; font-family: 'Bebas Neue', sans-serif; font-size: 26px; letter-spacing: 0.08em">Compra entrades</a>
+</div>
+</div>
+</section>
+
+<section id="olimpic" style="padding: 96px 0; background: radial-gradient(ellipse at 35% 50%, #0f2a23 0%, #000000 65%)">
+<div class="wrap" style="display: flex; flex-direction: column; gap: 32px">
+<div style="display: flex; flex-direction: column; gap: 8px">
+<span style="font-size: 12px; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: #5fae96">La nostra casa</span>
+<h2 style="margin: 0; font-family: 'Bebas Neue', sans-serif; font-weight: 400; font-size: 104px; line-height: 0.86">Palau Olímpic<br>de Badalona</h2>
+</div>
+<div class="arena">
+<div style="display: flex; flex-direction: column; gap: 16px">
+<div style="position: relative; height: 620px; background: radial-gradient(ellipse at 50% 60%, #12302a 0%, #000000 70%); border: 1px solid rgba(235,237,236,0.12)">
+<canvas data-arena="1" role="img" aria-label="Model 3D del Palau Olímpic de Badalona: planta en forma de gota, façana amb franja de vidre, sortides radials, graderia blanca al voltant de la pista i coberta de voltes paral·leles" style="position: absolute; inset: 0; width: 100%; height: 100%; display: block; cursor: grab; touch-action: none"></canvas>
+<span style="position: absolute; left: 16px; bottom: 14px; font-size: 12px; font-weight: 600; opacity: 0.75; pointer-events: none"><span id="hint3d">Arrossega per girar · roda o pessic per apropar</span></span>
+</div>
+<div role="group" aria-label="Vista del model" style="display: flex; gap: 2px; flex-wrap: wrap; background: rgba(235,237,236,0.15); align-self: flex-start">
+<button type="button" class="seg" data-view="persp" aria-pressed="true">Perspectiva</button><button type="button" class="seg" data-view="aeria" aria-pressed="false">Aèria</button><button type="button" class="seg" data-view="grada" aria-pressed="false">Des de la grada</button>
+<button type="button" id="btn-roof" style="background: #000000; color: #5fae96; border: 0; padding: 12px 20px; min-height: 44px; font-family: 'Bebas Neue', sans-serif; font-size: 20px; letter-spacing: 0.08em; cursor: pointer">Treu la coberta</button>
+<button type="button" id="btn-spin" style="background: #000000; color: #5fae96; border: 0; padding: 12px 20px; min-height: 44px; font-family: 'Bebas Neue', sans-serif; font-size: 20px; letter-spacing: 0.08em; cursor: pointer">Atura el gir</button>
+</div>
+</div>
+<div style="display: flex; flex-direction: column; gap: 24px">
+<p style="margin: 0; font-size: 17px; line-height: 1.65">Una planta en forma de gota que s'obre cap a la ciutat amb una gran escalinata, sortides radials al voltant de la façana, la graderia blanca abraçant la pista i una coberta de voltes paral·leles. Treu-li la coberta i mira-la per dins: l'Olímpic és arquitectura premiada i és, sobretot, casa nostra.</p>
+<div class="facts">
+<div style="background: #111614; padding: 20px; display: flex; flex-direction: column; gap: 4px"><span style="font-family: 'Bebas Neue', sans-serif; font-size: 48px; line-height: 1; color: #5fae96">12.500</span><span style="font-size: 13px">espectadors</span></div>
+<div style="background: #111614; padding: 20px; display: flex; flex-direction: column; gap: 4px"><span style="font-family: 'Bebas Neue', sans-serif; font-size: 48px; line-height: 1; color: #5fae96">1991</span><span style="font-size: 13px">inauguració</span></div>
+<div style="background: #111614; padding: 20px; display: flex; flex-direction: column; gap: 4px"><span style="font-family: 'Bebas Neue', sans-serif; font-size: 32px; line-height: 1">Barcelona '92</span><span style="font-size: 13px">seu del bàsquet olímpic</span></div>
+<div style="background: #111614; padding: 20px; display: flex; flex-direction: column; gap: 4px"><span style="font-family: 'Bebas Neue', sans-serif; font-size: 32px; line-height: 1">Premi Mies</span><span style="font-size: 13px">van der Rohe d'arquitectura</span></div>
+</div>
+<span style="font-size: 13px; opacity: 0.75">Arquitectes: Esteve Bonell i Francesc Rius · Av. Alfons XIII, s/n, Badalona</span>
+<div style="display: flex; gap: 16px; flex-wrap: wrap">
+<a href="#" style="background: #005441; text-decoration: none; padding: 16px 24px; font-family: 'Bebas Neue', sans-serif; font-size: 22px; letter-spacing: 0.08em">Tria el teu seient</a>
+<a href="#" style="border: 2px solid #EBEDEC; text-decoration: none; padding: 14px 24px; font-family: 'Bebas Neue', sans-serif; font-size: 22px; letter-spacing: 0.08em">Com arribar-hi</a>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<section style="padding: 88px 0; background: #0b0f0e; border-top: 1px solid rgba(235,237,236,0.12)">
+<div class="wrap" style="display: flex; flex-direction: column; gap: 24px">
+<div style="display: flex; justify-content: space-between; align-items: baseline; gap: 16px; flex-wrap: wrap">
+<h2 style="margin: 0; font-family: 'Bebas Neue', sans-serif; font-weight: 400; font-size: 72px; line-height: 0.9">Vesteix-te de Penya</h2>
+<a href="#" style="font-size: 14px; font-weight: 600">Botiga · enviament gratuït des de 50 € →</a>
+</div>
+<div class="g4">
+<a href="#" style="text-decoration: none; background: #161c1b; padding: 20px; display: flex; flex-direction: column; gap: 12px">
+<img src="assets/prod1.jpg" alt="1a samarreta de joc 26-27" style="width: 100%; height: 240px; object-fit: contain; background: #ffffff; display: block">
+<span style="font-weight: 600; font-size: 14px">1a samarreta 26-27</span>
+<span style="font-family: 'Bebas Neue', sans-serif; font-size: 26px; color: #5fae96">74,99 €</span>
+</a>
+<a href="#" style="text-decoration: none; background: #161c1b; padding: 20px; display: flex; flex-direction: column; gap: 12px">
+<img src="assets/prod2.jpg" alt="2a samarreta de joc 26-27" style="width: 100%; height: 240px; object-fit: contain; background: #ffffff; display: block">
+<span style="font-weight: 600; font-size: 14px">2a samarreta 26-27</span>
+<span style="font-family: 'Bebas Neue', sans-serif; font-size: 26px; color: #5fae96">74,99 €</span>
+</a>
+<a href="#" style="text-decoration: none; background: #161c1b; padding: 20px; display: flex; flex-direction: column; gap: 12px">
+<img src="assets/prod3.jpg" alt="Samarreta d'escalfament" style="width: 100%; height: 240px; object-fit: contain; background: #ffffff; display: block">
+<span style="font-weight: 600; font-size: 14px">Samarreta d'escalfament</span>
+<span style="font-family: 'Bebas Neue', sans-serif; font-size: 26px; color: #5fae96">64,99 €</span>
+</a>
+<a href="#" style="text-decoration: none; background: #161c1b; padding: 20px; display: flex; flex-direction: column; gap: 12px">
+<img src="assets/prod4.jpg" alt="1r pantaló de joc" style="width: 100%; height: 240px; object-fit: contain; background: #ffffff; display: block">
+<span style="font-weight: 600; font-size: 14px">1r pantaló de joc</span>
+<span style="font-family: 'Bebas Neue', sans-serif; font-size: 26px; color: #5fae96">49,99 €</span>
+</a>
+</div>
+</div>
+</section>
+
+<section id="socis" style="position: relative; min-height: 520px; display: flex; align-items: center; background: #005441">
+<div class="wrap" style="position: relative; width: 100%; display: flex; flex-direction: column; align-items: center; text-align: center; gap: 20px; padding-top: 72px; padding-bottom: 72px">
+<span style="font-size: 12px; font-weight: 700; letter-spacing: 0.24em; text-transform: uppercase">Socis i aficionats</span>
+<h2 style="margin: 0; font-family: 'Bebas Neue', sans-serif; font-weight: 400; font-size: 152px; line-height: 0.84">Verd i negre<br>per sempre</h2>
+<p style="margin: 0; font-size: 18px; line-height: 1.6; max-width: 600px">Siguis on siguis, ets de la Penya. A la grada de l'Olímpic cada partit o des de l'altra punta del món: tria com vols formar part del club.</p>
+</div>
+</section>
+
+<section style="background: #000000; padding: 0 0 96px">
+<div class="wrap g2" style="margin-top: -72px; position: relative">
+<div style="background: #EBEDEC; color: #000000; padding: 40px; display: flex; flex-direction: column; gap: 20px; border-top: 10px solid #005441; box-shadow: 0 24px 60px rgba(0,0,0,0.45)">
+<div style="display: flex; justify-content: space-between; align-items: center; gap: 12px">
+<span style="font-size: 12px; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: #005441">Soci CJB</span>
+<span style="background: #000000; color: #EBEDEC; padding: 5px 9px; font-size: 11px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase">El més triat</span>
+</div>
+<h3 style="margin: 0; font-family: 'Bebas Neue', sans-serif; font-weight: 400; font-size: 64px; line-height: 0.9; color: #005441">El teu seient<br>a l'Olímpic</h3>
+<p style="margin: 0; font-size: 15px; line-height: 1.6; color: #2a2f2e">Per a qui viu la Penya cada setmana, des de la grada.</p>
+<div style="display: flex; flex-direction: column; gap: 10px; font-size: 15px">
+<span>✓ Els 17 partits de Lliga Endesa i tota la BCL a casa</span>
+<span>✓ Seient fix i carnet digital al mòbil</span>
+<span>✓ Prioritat per a Copa i play-off</span>
+<span>✓ 15% de descompte a la botiga</span>
+</div>
+<div style="display: flex; align-items: baseline; gap: 10px; margin-top: auto; padding-top: 12px">
+<span style="font-size: 14px; color: #2a2f2e">des de</span>
+<span style="font-family: 'Bebas Neue', sans-serif; font-size: 64px; line-height: 1; color: #005441">290 €</span>
+<span style="font-size: 14px; color: #2a2f2e">/ temporada · menors de 14, 95 €</span>
+</div>
+<a href="#" style="background: #005441; color: #EBEDEC; text-decoration: none; padding: 16px; text-align: center; font-family: 'Bebas Neue', sans-serif; font-size: 24px; letter-spacing: 0.08em">Fes-te soci</a>
+</div>
+<div style="background: #111614; padding: 40px; display: flex; flex-direction: column; gap: 20px; border: 2px solid #5fae96">
+<div style="display: flex; justify-content: space-between; align-items: center; gap: 12px">
+<span style="font-size: 12px; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: #5fae96">Aficionat solidari · Penya Arreu</span>
+<span style="background: #5fae96; color: #000000; padding: 5px 9px; font-size: 11px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase">Nou</span>
+</div>
+<h3 style="margin: 0; font-family: 'Bebas Neue', sans-serif; font-weight: 400; font-size: 64px; line-height: 0.9">La Penya,<br>des de lluny</h3>
+<p style="margin: 0; font-size: 15px; line-height: 1.6">Per als penyistes que viuen fora de Badalona i volen seguir sent-ne part. Una quota solidària que suma per al club i per a la Fundació.</p>
+<div style="display: flex; flex-direction: column; gap: 10px; font-size: 15px">
+<span>✓ 5 partits a l'Olímpic a triar durant la temporada</span>
+<span>✓ Carnet digital d'aficionat i contingut exclusiu</span>
+<span>✓ Part de la quota destinada a la Fundació Joventut</span>
+<span>✓ Enviament internacional a la botiga</span>
+</div>
+<div style="display: flex; align-items: baseline; gap: 10px; margin-top: auto; padding-top: 12px">
+<span style="font-family: 'Bebas Neue', sans-serif; font-size: 64px; line-height: 1; color: #5fae96">59 €</span>
+<span style="font-size: 14px">/ any · 10 € van a la Fundació</span>
+</div>
+<a href="#" style="background: #5fae96; color: #000000; text-decoration: none; padding: 16px; text-align: center; font-family: 'Bebas Neue', sans-serif; font-size: 24px; letter-spacing: 0.08em">Fes-te aficionat</a>
+</div>
+</div>
+<div class="wrap" style="margin-top: 2px">
+<div class="g3">
+<div style="background: #111614; padding: 24px; display: flex; flex-direction: column; gap: 4px"><span style="font-family: 'Bebas Neue', sans-serif; font-size: 48px; line-height: 1">9.840</span><span style="font-size: 13px; opacity: 0.85">socis a l'Olímpic</span></div>
+<div style="background: #111614; padding: 24px; display: flex; flex-direction: column; gap: 4px"><span style="font-family: 'Bebas Neue', sans-serif; font-size: 48px; line-height: 1">1.265</span><span style="font-size: 13px; opacity: 0.85">aficionats solidaris</span></div>
+<div style="background: #111614; padding: 24px; display: flex; flex-direction: column; gap: 4px"><span style="font-family: 'Bebas Neue', sans-serif; font-size: 48px; line-height: 1">34</span><span style="font-size: 13px; opacity: 0.85">països amb penyistes</span></div>
+</div>
+<div style="display: flex; justify-content: center; margin-top: 24px">
+<a href="#" style="font-size: 14px; font-weight: 600">Ja ets soci o aficionat? Accedeix al teu compte →</a>
+</div>
+</div>
+</section>
+
+<footer style="background: #005441; padding: 48px 0 28px">
+<div class="wrap" style="display: flex; flex-direction: column; gap: 28px">
+<div style="display: flex; justify-content: space-between; align-items: center; gap: 24px; flex-wrap: wrap">
+<div style="display: flex; align-items: center; gap: 20px">
+<img src="assets/escut.png" alt="Escut del Club Joventut Badalona" style="height: 72px; width: auto; display: block">
+<span style="font-family: 'Bebas Neue', sans-serif; font-size: 64px; line-height: 1">Força Penya</span>
+</div>
+<div style="display: flex; gap: 24px; flex-wrap: wrap; font-size: 14px; font-weight: 600">
+<a href="#">Instagram</a>
+<a href="#">TikTok</a>
+<a href="#">YouTube</a>
+<a href="#">X</a>
+</div>
+</div>
+<div style="display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; font-size: 12px; border-top: 1px solid rgba(235,237,236,0.3); padding-top: 18px">
+<span>Club Joventut Badalona · C/ Ponent 143, Badalona · 934 602 040</span>
+<span>Avís legal · Cookies · Protecció de dades</span>
+</div>
+</div>
+</footer>
+
+</div>
+<script src="assets/three.min.js"></script>
+<script src="assets/OrbitControls.js"></script>
+<script>
+class DCLogic { constructor() { this.state = {}; this.props = {}; } setState(o) { Object.assign(this.state, o); if (this.onUpdate) this.onUpdate(); } }
+
+class Component extends DCLogic {
+renderVals() {
+const team = this.state.team || 'masc';
+const data = {
+masc: { name: 'Primer equip · Lliga Endesa', list: [
+{ day: '25 oct', when: 'Dg · 12:00', rival: 'FIATC Girona', comp: 'Lliga Endesa · J5', casa: false },
+{ day: '1 nov', when: 'Dg · 12:00', rival: 'Surne Bilbao', comp: 'Lliga Endesa · J6', casa: true },
+{ day: '8 nov', when: 'Dg · 13:00', rival: 'La Laguna Tenerife', comp: 'Lliga Endesa · J7', casa: false }
+] },
+fem: { name: 'Femení · LF Challenge', list: [
+{ day: '25 oct', when: 'Dg · 12:00', rival: 'Osés Construcción', comp: 'LF Challenge', casa: false },
+{ day: '31 oct', when: 'Ds · 19:00', rival: 'Recoletas Zamora', comp: 'LF Challenge · J8', casa: true }
+] },
+u22: { name: 'U22 · Lliga U', list: [
+{ day: '24 oct', when: 'Dv', rival: 'Euskaltax', comp: 'Lliga U · J5', casa: false },
+{ day: '30 oct', when: 'Dv · 20:15', rival: 'UCAM Murcia Juver', comp: 'Lliga U · J6', casa: true }
+] },
+bcr: { name: 'Menarini BCR · Superlliga BSR', list: [] }
+};
+const cur = data[team];
+const matches = cur.list.map((m) => ({ ...m, fora: !m.casa }));
+const tabs = [['masc', 'Primer equip'], ['fem', 'Femení'], ['u22', 'U22'], ['bcr', 'Menarini BCR']].map(([id, label]) => ({
+label, on: team === id, off: team !== id, pick: () => this.setState({ team: id })
+}));
+const teamName = cur.name;
+const noMatches = matches.length === 0;
+const view = this.state.view || 'persp';
+const auto = this.state.auto !== false;
+const roofOn = this.state.roof !== false;
+const views = [['persp', 'Perspectiva'], ['aeria', 'Aèria'], ['grada', 'Des de la grada']].map(([id, label]) => ({
+label, on: view === id, off: view !== id, pick: () => { this.setState({ view: id }); this.goView(id); }
+}));
+const left = Math.max(0, Date.UTC(2026, 10, 1, 11, 0, 0) - (this.state.now || Date.now()));
+const pad = (n) => String(n).padStart(2, '0');
+const cdD = pad(Math.floor(left / 86400000)), cdH = pad(Math.floor(left / 3600000) % 24), cdM = pad(Math.floor(left / 60000) % 60), cdS = pad(Math.floor(left / 1000) % 60);
+return {
+cdD, cdH, cdM, cdS,
+tabs, matches, views, teamName, noMatches,
+setCanvas: this.setCanvas || (this.setCanvas = (el) => { this.cv = el; }),
+hint3d: this.state.glFail ? 'El teu navegador no pot mostrar el model 3D.' : 'Arrossega per girar · roda o pessic per apropar',
+spinLabel: auto ? 'Atura el gir' : 'Fes-lo girar',
+toggleSpin: () => { this.setState({ auto: !auto }); if (this.ctl) this.ctl.autoRotate = !auto; },
+roofLabel: roofOn ? 'Treu la coberta' : 'Posa la coberta',
+toggleRoof: () => { this.setState({ roof: !roofOn }); if (this.roofGroup) this.roofGroup.visible = !roofOn; }
+};
+}
+componentDidMount() {
+this.dead = false;
+this.gen = (this.gen || 0) + 1;
+if (this.tick) clearInterval(this.tick);
+this.tick = setInterval(() => this.setState({ now: Date.now() }), 1000);
+this.initThree(0, this.gen);
+}
+componentWillUnmount() {
+this.dead = true;
+this.gen = (this.gen || 0) + 1;
+if (this.tick) { clearInterval(this.tick); this.tick = null; }
+this.teardown();
+}
+teardown() {
+if (this.raf) { cancelAnimationFrame(this.raf); this.raf = null; }
+if (this.ro) { this.ro.disconnect(); this.ro = null; }
+if (this.ctl) { this.ctl.dispose(); this.ctl = null; }
+if (this.renderer) { this.renderer.dispose(); this.renderer = null; }
+this.roofGroup = null;
+}
+goView(id) {
+const V = { persp: [[150, 115, 175], [12, 6, 0]], aeria: [[12, 330, 1], [12, 0, 0]], grada: [[0, 15, 46], [0, 2, 0]] };
+const v = V[id] || V.persp;
+this.camGoal = v[0]; this.tgtGoal = v[1];
+}
+initThree(tries, gen) {
+if (this.dead || gen !== this.gen) return;
+const T = window.THREE;
+if (!this.cv || !this.cv.isConnected) this.cv = document.querySelector('canvas[data-arena]');
+if (!T || !T.OrbitControls || !this.cv) { if (tries < 120) setTimeout(() => this.initThree(tries + 1, gen), 150); return; }
+this.teardown();
+let r;
+try { r = new T.WebGLRenderer({ canvas: this.cv, antialias: true, alpha: true }); } catch (e) { this.setState({ glFail: true }); return; }
+this.renderer = r;
+r.setPixelRatio(Math.min(2, window.devicePixelRatio || 1));
+r.shadowMap.enabled = true; r.shadowMap.type = T.PCFSoftShadowMap;
+r.outputEncoding = T.sRGBEncoding;
+const scene = new T.Scene();
+scene.fog = new T.Fog(0x000000, 300, 620);
+const cam = new T.PerspectiveCamera(36, 1, 1, 2000);
+cam.position.set(150, 115, 175);
+this.cam = cam;
+const ctl = new T.OrbitControls(cam, this.cv);
+ctl.target.set(12, 6, 0); ctl.enableDamping = true; ctl.dampingFactor = 0.08;
+ctl.autoRotate = this.state.auto !== false; ctl.autoRotateSpeed = 0.5;
+ctl.maxPolarAngle = Math.PI * 0.495; ctl.minDistance = 12; ctl.maxDistance = 460;
+ctl.addEventListener('start', () => { this.camGoal = null; });
+this.ctl = ctl;
+scene.add(new T.HemisphereLight(0xe6efec, 0x1a2421, 0.75));
+const sun = new T.DirectionalLight(0xfff6ea, 1.15);
+sun.position.set(140, 200, 90); sun.castShadow = true;
+sun.shadow.mapSize.set(2048, 2048);
+const sc = sun.shadow.camera; sc.left = -150; sc.right = 150; sc.top = 150; sc.bottom = -150; sc.near = 10; sc.far = 600;
+scene.add(sun);
+const M = (c, o) => new T.MeshStandardMaterial(Object.assign({ color: c, roughness: 0.85, metalness: 0.02 }, o || {}));
+const mat = {
+ground: M(0x1b2120), plaza: M(0x3b4241), concrete: M(0xd2d6d4), concreteDark: M(0x9ca3a1),
+glass: M(0x1c2b28, { roughness: 0.15, metalness: 0.45 }), seatA: M(0xebedec), seatB: M(0xdadfdd),
+court: M(0x005441, { roughness: 0.6 }), line: M(0xffffff), roof: M(0x8fa89f, { roughness: 0.55, metalness: 0.25 }),
+stair: M(0x5f6765), city: M(0x161c1b), road: M(0x262c2b)
+};
+const add = (mesh, parent) => { mesh.castShadow = true; mesh.receiveShadow = true; (parent || scene).add(mesh); return mesh; };
+const shape = (pts) => { const s = new T.Shape(); pts.forEach((p, i) => (i ? s.lineTo(p[0], p[1]) : s.moveTo(p[0], p[1]))); s.closePath(); return s; };
+const hole = (pts) => { const p = new T.Path(); pts.forEach((q, i) => (i ? p.lineTo(q[0], q[1]) : p.moveTo(q[0], q[1]))); p.closePath(); return p; };
+const tear = (a, b, ax) => { const o = []; for (let d = 40; d <= 320; d += 4) { const t = d * Math.PI / 180; o.push([a * Math.cos(t), b * Math.sin(t)]); } o.push([ax, 0]); return o; };
+const supe = (a, b, n) => { const o = []; const N = 120; for (let i = 0; i < N; i++) { const t = i / N * Math.PI * 2, c = Math.cos(t), s = Math.sin(t); o.push([a * Math.sign(c) * Math.pow(Math.abs(c), 2 / n), b * Math.sign(s) * Math.pow(Math.abs(s), 2 / n)]); } return o; };
+const slab = (outer, inner, y0, h, m, parent) => {
+const s = shape(outer); if (inner) s.holes.push(hole(inner));
+const g = new T.ExtrudeGeometry(s, { depth: h, bevelEnabled: false, curveSegments: 1 });
+g.rotateX(-Math.PI / 2);
+const mesh = new T.Mesh(g, m); mesh.position.y = y0; return add(mesh, parent);
+};
+const box = (w, h, d, m, x, y, z, ry, parent) => { const mesh = new T.Mesh(new T.BoxGeometry(w, h, d), m); mesh.position.set(x, y, z); if (ry) mesh.rotation.y = ry; return add(mesh, parent); };
+const ground = new T.Mesh(new T.PlaneGeometry(1400, 1400), mat.ground); ground.rotation.x = -Math.PI / 2; ground.receiveShadow = true; scene.add(ground);
+box(1400, 0.1, 22, mat.road, 0, 0.05, 118);
+box(22, 0.1, 1400, mat.road, 168, 0.05, 0);
+slab(tear(74, 68, 120), null, 0, 0.5, mat.plaza);
+const A = 60, B = 55, AX = 92, WALL = 21;
+slab(tear(A, B, AX), null, 0.5, 0.2, mat.concreteDark);
+const outerW = tear(A, B, AX), innerW = tear(A - 1.4, B - 1.4, AX - 2.6);
+slab(outerW, innerW, 0.5, 10.5, mat.concrete);
+slab(outerW, innerW, 11, 3, mat.glass);
+slab(outerW, innerW, 14, WALL - 14, mat.concrete);
+const ROWS = 26;
+for (let i = 0; i < ROWS; i++) {
+const a0 = 17.5 + i * 1.25, b0 = 11 + i * 1.25;
+slab(supe(a0 + 1.25, b0 + 1.25, 3.2), supe(a0, b0, 3.2), 0.7, 0.9 + i * 0.55, i % 2 ? mat.seatB : mat.seatA);
+}
+const topA = 17.5 + ROWS * 1.25, topB = 11 + ROWS * 1.25;
+slab(innerW, supe(topA, topB, 3.2), 0.7, 0.9 + ROWS * 0.55, mat.concreteDark);
+box(28, 0.3, 15, mat.court, 0, 0.85, 0);
+[[28, 0.31, 0.25, 0, 7.5], [28, 0.31, 0.25, 0, -7.5], [0.25, 0.31, 15, 14, 0], [0.25, 0.31, 15, -14, 0], [0.25, 0.31, 15, 0, 0]].forEach((l) => box(l[0], l[1], l[2], mat.line, l[3], 0.86, l[4]));
+[50, 75, 100, 125, 150, 172, 188, 210, 235, 260, 285, 310].forEach((deg) => {
+const t = deg * Math.PI / 180;
+const px = A * Math.cos(t), py = B * Math.sin(t);
+let nx = Math.cos(t) / A, ny = Math.sin(t) / B; const nl = Math.hypot(nx, ny); nx /= nl; ny /= nl;
+const wx = nx, wz = -ny, ry = Math.atan2(ny, nx);
+box(9, 8, 5.5, mat.concrete, px + wx * 4.4, 4.5, -py + wz * 4.4, ry);
+for (let k = 0; k < 6; k++) box(1.2, 0.35, 4.6, mat.stair, px + wx * (9.4 + k * 1.2), 0.5 + (5 - k) * 0.7, -py + wz * (9.4 + k * 1.2), ry);
+});
+for (let k = 0; k < 8; k++) box(1.4, 0.35, 26 - k * 0.6, mat.stair, AX + 1 + k * 1.4, 0.5 + (7 - k) * 0.45, 0);
+const roofGroup = new T.Group(); scene.add(roofGroup); this.roofGroup = roofGroup;
+roofGroup.visible = this.state.roof !== false;
+slab(outerW, tear(A - 4, B - 4, AX - 7), WALL, 1.2, mat.concrete, roofGroup);
+const c40 = Math.cos(40 * Math.PI / 180), s40 = Math.sin(40 * Math.PI / 180);
+const wedge = [[A * c40 - 6, B * s40 - 2], [AX - 2, 0], [A * c40 - 6, -B * s40 + 2]];
+slab(wedge, null, WALL - 0.4, 0.8, mat.roof, roofGroup);
+const R = 6.4;
+for (let yc = -48; yc <= 48.1; yc += 12) {
+const f = 1 - (yc / B) * (yc / B); if (f <= 0) continue;
+const L = (A - 3) * Math.sqrt(f);
+const g = new T.CylinderGeometry(R, R, 2 * L, 28, 1, false, 0, Math.PI);
+g.rotateZ(Math.PI / 2);
+const vault = new T.Mesh(g, mat.roof);
+vault.scale.set(1, 0.5 + 0.25 * f, 1);
+vault.position.set(0, WALL + 1.2, -yc);
+add(vault, roofGroup);
+}
+const rnd = (s) => { const x = Math.sin(s * 99.13) * 43758.5453; return x - Math.floor(x); };
+for (let i = 0; i < 26; i++) {
+const ang = rnd(i + 1) * Math.PI * 2, dist = 175 + rnd(i + 7) * 170;
+const x = Math.cos(ang) * dist, z = Math.sin(ang) * dist;
+if (Math.abs(z - 118) < 20 || Math.abs(x - 168) < 20) continue;
+const h = 14 + rnd(i + 3) * 30;
+box(26 + rnd(i + 5) * 26, h, 20 + rnd(i + 9) * 22, mat.city, x, h / 2, z, rnd(i + 11) * 0.6);
+}
+const size = () => {
+const el = this.cv; if (!el) return;
+const w = el.clientWidth || 800, h = el.clientHeight || 600;
+r.setSize(w, h, false); cam.aspect = w / h; cam.updateProjectionMatrix();
+};
+size();
+if (window.ResizeObserver) { this.ro = new ResizeObserver(size); this.ro.observe(this.cv); }
+const tmp = new T.Vector3();
+const loop = () => {
+if (this.dead || gen !== this.gen) return;
+this.raf = requestAnimationFrame(loop);
+if (this.camGoal) {
+tmp.set(this.camGoal[0], this.camGoal[1], this.camGoal[2]); cam.position.lerp(tmp, 0.06);
+tmp.set(this.tgtGoal[0], this.tgtGoal[1], this.tgtGoal[2]); ctl.target.lerp(tmp, 0.08);
+if (cam.position.distanceTo(new T.Vector3(this.camGoal[0], this.camGoal[1], this.camGoal[2])) < 0.5) this.camGoal = null;
+}
+ctl.update();
+r.render(scene, cam);
+};
+loop();
+}
+}
+
+(function () {
+  var c = new Component();
+  var $ = function (id) { return document.getElementById(id); };
+  var row = function (m) {
+    var badge = m.casa
+      ? '<span style="background:#005441;padding:5px 9px;font-size:11px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase">Casa</span>'
+      : '<span style="border:1px solid rgba(235,237,236,0.5);padding:4px 8px;font-size:11px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase">Fora</span>';
+    var cta = m.casa
+      ? '<a href="#" style="background:#005441;text-decoration:none;padding:12px 22px;font-family:\'Bebas Neue\',sans-serif;font-size:20px;letter-spacing:0.08em">Entrades</a>'
+      : '<a href="#" style="text-decoration:none;padding:12px 4px;font-family:\'Bebas Neue\',sans-serif;font-size:20px;letter-spacing:0.08em;color:#5fae96">Prèvia →</a>';
+    return '<div style="background:#111614;padding:18px 24px;display:flex;align-items:center;gap:28px;flex-wrap:wrap">' +
+      '<div style="display:flex;flex-direction:column;min-width:92px"><span style="font-family:\'Bebas Neue\',sans-serif;font-size:40px;line-height:0.95">' + m.day + '</span>' +
+      '<span style="font-size:12px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;opacity:0.75">' + m.when + '</span></div>' +
+      '<div style="display:flex;align-items:center;gap:14px;flex:1 1 260px;min-width:0">' + badge +
+      '<span style="font-family:\'Bebas Neue\',sans-serif;font-size:32px;line-height:1">vs ' + m.rival + '</span></div>' +
+      '<span class="sm-hide" style="font-size:12px;font-weight:600;opacity:0.7">' + m.comp + '</span>' + cta + '</div>';
+  };
+  var empty = '<div style="background:#111614;padding:24px;display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap">' +
+    '<span style="font-size:15px">El calendari de la Superlliga BSR es publica a la web de la federació.</span>' +
+    '<a href="#" style="font-family:\'Bebas Neue\',sans-serif;font-size:20px;letter-spacing:0.08em;color:#5fae96;text-decoration:none">Veure calendari →</a></div>';
+  var lastTeam = null;
+  var render = function () {
+    var v = c.renderVals();
+    $('cd-d').textContent = v.cdD; $('cd-h').textContent = v.cdH; $('cd-m').textContent = v.cdM; $('cd-s').textContent = v.cdS;
+    var team = c.state.team || 'masc';
+    if (team !== lastTeam) {
+      lastTeam = team;
+      $('team-name').textContent = v.teamName;
+      $('match-list').innerHTML = v.noMatches ? empty : v.matches.map(row).join('');
+      document.querySelectorAll('[data-team]').forEach(function (b) { b.setAttribute('aria-pressed', String(b.dataset.team === team)); });
+    }
+    var view = c.state.view || 'persp';
+    document.querySelectorAll('[data-view]').forEach(function (b) { b.setAttribute('aria-pressed', String(b.dataset.view === view)); });
+    $('btn-roof').textContent = v.roofLabel;
+    $('btn-spin').textContent = v.spinLabel;
+    if (c.state.glFail) $('hint3d').textContent = v.hint3d;
+    c._v = v;
+  };
+  c.onUpdate = render;
+  document.querySelectorAll('[data-team]').forEach(function (b) { b.addEventListener('click', function () { c.setState({ team: b.dataset.team }); }); });
+  document.querySelectorAll('[data-view]').forEach(function (b) {
+    b.addEventListener('click', function () { c.setState({ view: b.dataset.view }); c.goView(b.dataset.view); });
+  });
+  $('btn-roof').addEventListener('click', function () { c._v.toggleRoof(); });
+  $('btn-spin').addEventListener('click', function () { c._v.toggleSpin(); });
+  c.cv = document.querySelector('canvas[data-arena]');
+  render();
+  c.componentDidMount();
+  var vid = document.querySelector('video');
+  if (vid && window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) { vid.removeAttribute('autoplay'); vid.pause(); }
+})();
+</script>
+</body>
+</html>
