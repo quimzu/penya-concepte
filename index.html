@@ -89,7 +89,12 @@ p{font-size:16px !important}
 #olimpic .facts span:first-child{font-size:36px !important}
 .g2>div{padding:28px 20px !important}
 .g2{margin-top:-40px !important}
-.g4 img[style*="contain"]{height:150px !important}
+.g4:has(img[style*="contain"]){display:flex !important;overflow-x:auto;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;gap:10px !important;margin-right:-16px;padding-right:16px;scrollbar-width:none}
+.g4:has(img[style*="contain"])::-webkit-scrollbar{display:none}
+.g4:has(img[style*="contain"])>a{flex:0 0 78% !important;scroll-snap-align:start}
+.g4 img[style*="contain"]{height:320px !important}
+.g4:has(img[style*="contain"])>a>span:first-of-type{font-size:16px !important}
+.g4:has(img[style*="contain"])>a>span:last-of-type{font-size:32px !important}
 .score span{font-size:26px !important}
 footer span[style*="font-size: 64px"]{font-size:40px !important}
 }
