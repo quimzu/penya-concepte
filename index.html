@@ -58,7 +58,10 @@ h2{font-size:clamp(56px,8vw,96px) !important}
 #site-header>.wrap{height:72px !important}
 #site-header img{height:48px !important}
 section{padding-top:56px !important;padding-bottom:56px !important}
-section:first-of-type{padding-top:0 !important;padding-bottom:0 !important;min-height:540px !important}
+section:first-of-type{padding-top:106px !important;padding-bottom:0 !important;min-height:0 !important;flex-direction:column !important;align-items:stretch !important;background:#000000}
+section:first-of-type>img{position:relative !important;inset:auto !important;height:300px !important;object-position:52% 35% !important;-webkit-mask-image:linear-gradient(180deg,#000 72%,transparent);mask-image:linear-gradient(180deg,#000 72%,transparent)}
+section:first-of-type>div:not(.wrap){display:none !important}
+section:first-of-type .wrap{position:relative !important;bottom:auto !important;margin-top:-28px}
 section:first-of-type .wrap{padding-bottom:20px !important;gap:14px !important}
 section:first-of-type .wrap>span{font-size:10px !important;padding:6px 10px !important}
 section:first-of-type .wrap>div{gap:12px !important}
