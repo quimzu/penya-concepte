@@ -56,7 +56,7 @@ h2{font-size:clamp(56px,8vw,96px) !important}
 @media (max-width:760px){
 .bl{display:none}
 #site-header>.wrap{height:72px !important}
-#site-header img{height:48px !important}
+#site-header img{height:58px !important}
 section{padding-top:56px !important;padding-bottom:56px !important}
 section:first-of-type{padding-top:106px !important;padding-bottom:0 !important;min-height:0 !important;flex-direction:column !important;align-items:stretch !important;background:#000000}
 section:first-of-type>img{position:relative !important;inset:auto !important;height:300px !important;object-position:52% 35% !important;-webkit-mask-image:linear-gradient(180deg,#000 72%,transparent);mask-image:linear-gradient(180deg,#000 72%,transparent)}
@@ -103,7 +103,7 @@ footer span[style*="font-size: 64px"]{font-size:40px !important}
 .burger span{position:absolute;left:10px;right:10px;height:2px;background:#EBEDEC;transition:transform .45s cubic-bezier(.7,0,.2,1),opacity .25s,top .45s cubic-bezier(.7,0,.2,1)}
 .burger span:nth-child(1){top:14px}.burger span:nth-child(2){top:21px}.burger span:nth-child(3){top:28px}
 body.menu-open .burger span:nth-child(1){top:21px;transform:rotate(45deg)}
-body.menu-open .burger span:nth-child(2){opacity:0;transform:translateX(12px)}
+body.menu-open .burger span:nth-child(2){opacity:0}
 body.menu-open .burger span:nth-child(3){top:21px;transform:rotate(-45deg)}
 .menu{position:fixed;inset:0;z-index:55;visibility:hidden;background:#005441 url(assets/grada_poster.jpg) center/cover no-repeat;clip-path:circle(0% at var(--mx,calc(100% - 38px)) var(--my,70px));transition:clip-path .7s cubic-bezier(.7,0,.2,1),visibility 0s linear .7s}
 .menu::before{content:"";position:absolute;inset:0;background:linear-gradient(160deg,rgba(0,84,65,.92) 0%,rgba(0,40,31,.82) 45%,rgba(0,0,0,.9) 100%)}
@@ -120,14 +120,16 @@ body.menu-open .menu-cta,body.menu-open .menu-foot{opacity:1;transform:none}
 .m-solid{background:#EBEDEC;color:#005441}
 .menu-foot{gap:18px;font-size:13px;font-weight:600}.menu-foot a{color:#EBEDEC}
 body.menu-open{overflow:hidden}
-body.menu-open #site-header{position:fixed !important;top:0 !important;z-index:60 !important}
+html{scrollbar-gutter:stable}
 .burger{display:block}
 #site-header nav{display:none !important}
 #site-header a.sm-hide{display:inline-flex !important}
 @media (max-width:420px){#site-header .wrap>div:last-child{gap:10px !important}#site-header a[href="#socis"]{padding:8px 12px !important;font-size:17px !important}}
 .menu-side{display:flex;flex-direction:column;gap:22px}
 @media (min-width:761px){
-.burger{width:52px;height:52px;border:2px solid rgba(235,237,236,.85)}
+.burger{width:52px;height:52px}
+#site-header>.wrap{height:116px !important}
+#site-header img{height:88px !important}
 .burger span{left:13px;right:13px}.burger span:nth-child(1){top:17px}.burger span:nth-child(2){top:24px}.burger span:nth-child(3){top:31px}
 body.menu-open .burger span:nth-child(1),body.menu-open .burger span:nth-child(3){top:24px}
 .menu-in{max-width:1280px;margin:0 auto;padding:150px 40px 56px;flex-direction:row;align-items:flex-end;justify-content:space-between;gap:48px}
@@ -148,7 +150,6 @@ body.menu-open .burger span:nth-child(1),body.menu-open .burger span:nth-child(3
 .menu ul a:hover::after{transform:scaleX(1)}
 }
 @media (hover:hover){
-.burger:hover span:nth-child(2){transform:translateX(-4px)}
 a[style*="overflow: hidden"]>img{transition:transform 1.4s cubic-bezier(.2,.8,.2,1),filter .6s}
 a[style*="overflow: hidden"]:hover>img{transform:scale(1.06);filter:saturate(1.12) contrast(1.04)}
 a[style*="overflow: hidden"]>div[style*="bottom"]{transition:transform .5s cubic-bezier(.2,.8,.2,1)}
@@ -823,7 +824,17 @@ loop();
 <script>
 (function(){
   var b=document.getElementById('burger'), m=document.getElementById('menu');
-  var set=function(open){if(open){var r=b.getBoundingClientRect();m.style.setProperty('--mx',(r.left+r.width/2)+'px');m.style.setProperty('--my',(r.top+r.height/2)+'px');}document.body.classList.toggle('menu-open',open);b.setAttribute('aria-expanded',String(open));b.setAttribute('aria-label',open?'Tanca el menú':'Obre el menú');m.setAttribute('aria-hidden',String(!open));};
+  var h=document.getElementById('site-header'), t0=h.style.top, unpin=null;
+  var set=function(open){
+    if(open){
+      if(unpin){clearTimeout(unpin);unpin=null;}
+      var hr=h.getBoundingClientRect();
+      h.style.top=Math.round(hr.top)+'px';h.style.position='fixed';h.style.zIndex='60';
+      var r=b.getBoundingClientRect();m.style.setProperty('--mx',(r.left+r.width/2)+'px');m.style.setProperty('--my',(r.top+r.height/2)+'px');
+    } else if(document.body.classList.contains('menu-open')){
+      unpin=setTimeout(function(){h.style.position='absolute';h.style.top=t0;h.style.zIndex='5';unpin=null;},750);
+    }
+    document.body.classList.toggle('menu-open',open);b.setAttribute('aria-expanded',String(open));b.setAttribute('aria-label',open?'Tanca el menú':'Obre el menú');m.setAttribute('aria-hidden',String(!open));};
   b.addEventListener('click',function(){set(!document.body.classList.contains('menu-open'));});
   m.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){set(false);});});
   document.addEventListener('keydown',function(e){if(e.key==='Escape')set(false);});
