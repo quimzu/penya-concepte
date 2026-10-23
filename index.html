@@ -2,6 +2,19 @@
 <html lang="ca">
 <head>
 <meta charset="utf-8">
+<!-- Google tag (gtag.js) amb Consent Mode v2 -->
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('consent', 'default', {ad_storage:'denied', ad_user_data:'denied', ad_personalization:'denied', analytics_storage:'denied'});
+  try { if (localStorage.getItem('penya-ck') === 'si') gtag('consent', 'update', {analytics_storage:'granted'}); } catch (e) {}
+</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-VJYQETF1XX"></script>
+<script>
+  gtag('js', new Date());
+
+  gtag('config', 'G-VJYQETF1XX');
+</script>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex">
 <title>Penya · Concepte de web (proposta Boira.studio)</title>
@@ -252,7 +265,7 @@ a.boira:hover{color:#000}
 </div>
 </header>
 <div id="menu" class="menu" aria-hidden="true">
-<div class="menu-media" aria-hidden="true"><img src="assets/menu_partits.jpg" alt="" data-i="0" loading="lazy"><img src="assets/menu_equips.jpg" alt="" data-i="1" loading="lazy"><img src="assets/menu_cantera.jpg" alt="" data-i="2" loading="lazy"><img src="assets/menu_historia.jpg" alt="" data-i="3" loading="lazy"><img src="assets/menu_olimpic.jpg" alt="" data-i="4" loading="lazy"><img src="assets/menu_botiga.jpg" alt="" data-i="5" loading="lazy"><img src="assets/menu_socis.jpg" alt="" data-i="6" loading="lazy"><img src="assets/hero.jpg" alt="" data-i="7" loading="lazy"></div>
+<div class="menu-media" aria-hidden="true"><img src="assets/esmaixada.jpg" alt="" data-i="0" loading="lazy"><img src="assets/menu_equips.jpg" alt="" data-i="1" loading="lazy"><img src="assets/menu_cantera.jpg" alt="" data-i="2" loading="lazy"><img src="assets/menu_historia.jpg" alt="" data-i="3" loading="lazy"><img src="assets/menu_olimpic.jpg" alt="" data-i="4" loading="lazy"><img src="assets/menu_botiga.jpg" alt="" data-i="5" loading="lazy"><img src="assets/menu_socis.jpg" alt="" data-i="6" loading="lazy"><img src="assets/grup.jpg" alt="" data-i="7" loading="lazy"></div>
 <nav aria-label="Menú principal" class="menu-in">
 <ul><li><a href="#calendari" data-i="0">Pròxims partits</a></li><li><a href="#" data-i="1">Equips</a></li><li><a href="#" data-i="2">Cantera</a></li><li><a href="#" data-i="3">Història</a></li><li><a href="#olimpic" data-i="4">L'Olímpic</a></li><li><a href="#" data-i="5">Botiga</a></li><li><a href="#socis" data-i="6">Socis</a></li><li><a href="#" data-i="7">Notícies</a></li></ul>
 <div class="menu-side"><div class="menu-cta"><a href="#calendari" class="m-btn m-solid">Entrades</a><a href="#" class="m-btn">Botiga</a></div>
@@ -308,7 +321,7 @@ a.boira:hover{color:#000}
 </div>
 <div class="g4">
 <a href="#" style="position: relative; display: block; height: 480px; overflow: hidden; text-decoration: none">
-<img src="assets/celebracio.jpg" alt="Equip masculí" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover">
+<img src="assets/eq_primer.jpg" alt="Equip masculí" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center 30%">
 <div style="position: absolute; inset: 0; background: linear-gradient(0deg, rgba(0,0,0,0.92) 0%, rgba(0,0,0,0) 55%)"></div>
 <div style="position: absolute; left: 22px; right: 22px; bottom: 22px; display: flex; flex-direction: column; gap: 4px">
 <span style="font-family: 'Bebas Neue', sans-serif; font-size: 44px; line-height: 1">Primer equip</span>
@@ -316,7 +329,7 @@ a.boira:hover{color:#000}
 </div>
 </a>
 <a href="#" style="position: relative; display: block; height: 480px; overflow: hidden; text-decoration: none">
-<img src="assets/femeni.jpg" alt="Equip femení" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover">
+<img src="assets/eq_femeni.jpg" alt="Equip femení" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 60% 25%">
 <div style="position: absolute; inset: 0; background: linear-gradient(0deg, rgba(0,0,0,0.92) 0%, rgba(0,0,0,0) 55%)"></div>
 <div style="position: absolute; left: 22px; right: 22px; bottom: 22px; display: flex; flex-direction: column; gap: 4px">
 <span style="font-family: 'Bebas Neue', sans-serif; font-size: 44px; line-height: 1">Femení</span>
@@ -324,7 +337,7 @@ a.boira:hover{color:#000}
 </div>
 </a>
 <a href="#" style="position: relative; display: block; height: 480px; overflow: hidden; text-decoration: none">
-<img src="assets/u22.jpg" alt="Equip U22" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover">
+<img src="assets/eq_u22.jpg" alt="Equip U22" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 62% 30%">
 <div style="position: absolute; inset: 0; background: linear-gradient(0deg, rgba(0,0,0,0.92) 0%, rgba(0,0,0,0) 55%)"></div>
 <div style="position: absolute; left: 22px; right: 22px; bottom: 22px; display: flex; flex-direction: column; gap: 4px">
 <span style="font-family: 'Bebas Neue', sans-serif; font-size: 44px; line-height: 1">U22</span>
@@ -925,30 +938,23 @@ document.querySelectorAll('.pimg').forEach(function(p){
 });
 </script>
 <div id="ck" role="dialog" aria-live="polite" aria-label="Cookies">
-<p>Fem servir Google Analytics per saber quanta gent visita aquest concepte i què hi clica. Només s'activa si ho acceptes.</p>
+<p>Fem servir Google Analytics per saber quanta gent visita aquest concepte i què hi clica. Les cookies només s'activen si ho acceptes.</p>
 <div class="ck-b"><button type="button" class="ck-ok">Acceptar</button><button type="button" class="ck-no">Rebutjar</button></div>
 </div>
 <script>
 (function(){
-  var ID="G-VJYQETF1XX", K="penya-ck";
+  var K="penya-ck";
   var get=function(){try{return localStorage.getItem(K);}catch(e){return null;}};
   var put=function(v){try{localStorage.setItem(K,v);}catch(e){}};
-  var load=function(){
-    if(window.gtag) return;
-    window.dataLayer=window.dataLayer||[];
-    window.gtag=function(){dataLayer.push(arguments);};
-    gtag('js',new Date()); gtag('config',ID,{anonymize_ip:true});
-    var s=document.createElement('script'); s.async=true; s.src='https://www.googletagmanager.com/gtag/js?id='+ID; document.head.appendChild(s);
-    document.addEventListener('click',function(e){
-      var a=e.target.closest('a,button'); if(!a||a.closest('#ck')) return;
-      var t=(a.getAttribute('aria-label')||a.textContent||'').trim().replace(/\s+/g,' ').slice(0,60); if(!t) return;
-      gtag('event','clic_boto',{etiqueta:t,seccio:(a.closest('section,header,footer,#menu')||{}).id||''});
-    });
-  };
+  document.addEventListener('click',function(e){
+    var a=e.target.closest('a,button'); if(!a||a.closest('#ck')) return;
+    var t=(a.getAttribute('aria-label')||a.textContent||'').trim().replace(/\s+/g,' ').slice(0,60); if(!t) return;
+    gtag('event','clic_boto',{etiqueta:t,seccio:(a.closest('section,header,footer,#menu')||{}).id||''});
+  });
   var ck=document.getElementById('ck');
   var v=get();
-  if(v==='si') load(); else if(v!=='no') ck.classList.add('on');
-  ck.querySelector('.ck-ok').addEventListener('click',function(){put('si');ck.classList.remove('on');load();});
+  if(v!=='si' && v!=='no') ck.classList.add('on');
+  ck.querySelector('.ck-ok').addEventListener('click',function(){put('si');ck.classList.remove('on');gtag('consent','update',{analytics_storage:'granted'});});
   ck.querySelector('.ck-no').addEventListener('click',function(){put('no');ck.classList.remove('on');});
 })();
 </script>
