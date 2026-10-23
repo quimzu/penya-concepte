@@ -211,6 +211,13 @@ div[style*="background: #EBEDEC"] a[style*="background: #005441"]:hover,.m-solid
 #ck .ck-ok{background:#005441;color:#EBEDEC}#ck .ck-ok:hover{background:#000;border-color:#000}
 #ck .ck-no{background:transparent;color:#005441}#ck .ck-no:hover{background:#005441;color:#EBEDEC}
 
+@media (min-width:1100px){
+section:first-of-type{min-height:max(820px,min(calc(100vh - 34px),56.25vw)) !important}
+}
+@media (min-width:1500px){
+section:first-of-type>img{left:auto !important;right:0 !important;width:66% !important;object-position:52% 18% !important;-webkit-mask-image:linear-gradient(90deg,transparent 0,#000 30%);mask-image:linear-gradient(90deg,transparent 0,#000 30%)}
+section:first-of-type{background:#000}
+}
 a.boira{color:#005441;font-weight:800;text-decoration:underline;text-underline-offset:2px;white-space:nowrap}
 a.boira:hover{color:#000}
 .boira-credit{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;margin-top:22px;padding-top:22px;border-top:1px solid rgba(235,237,236,.3)}
