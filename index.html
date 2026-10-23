@@ -201,6 +201,16 @@ div[style*="background: #EBEDEC"] a[style*="background: #005441"]:hover,.m-solid
 .pimg .worn-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
 .pimg .worn-tag{position:absolute;left:12px;bottom:12px;background:#005441;color:#EBEDEC;font-family:Montserrat,sans-serif;font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;padding:6px 10px}
 </style>
+<style>
+#ck{position:fixed;left:16px;right:16px;bottom:16px;z-index:70;max-width:520px;margin-left:auto;background:#EBEDEC;color:#000;font-family:Montserrat,sans-serif;padding:18px 20px;box-shadow:0 18px 50px rgba(0,0,0,.45);border-top:6px solid #005441;display:none}
+#ck.on{display:block;animation:ckin .5s cubic-bezier(.2,.8,.2,1)}
+@keyframes ckin{from{transform:translateY(20px);opacity:0}to{transform:none;opacity:1}}
+#ck p{margin:0 0 14px;font-size:14px;line-height:1.5}
+#ck .ck-b{display:flex;gap:10px;flex-wrap:wrap}
+#ck button{flex:1 1 140px;min-height:44px;border:2px solid #005441;font-family:'Bebas Neue',sans-serif;font-size:20px;letter-spacing:.08em;cursor:pointer;transition:background-color .25s,color .25s}
+#ck .ck-ok{background:#005441;color:#EBEDEC}#ck .ck-ok:hover{background:#000;border-color:#000}
+#ck .ck-no{background:transparent;color:#005441}#ck .ck-no:hover{background:#005441;color:#EBEDEC}
+</style>
 </head>
 <body>
 <div style="background: #EBEDEC; color: #000000; font-family: Montserrat, sans-serif; font-size: 12px; font-weight: 600; text-align: center; padding: 8px 16px; position: relative; z-index: 20">Concepte de disseny no oficial<span class="bl"> · Proposta de redisseny del web del Club Joventut Badalona per Boira.studio</span></div>
@@ -896,6 +906,34 @@ document.querySelectorAll('.pimg').forEach(function(p){
   var a=p.closest('a'); if(!a) return;
   a.addEventListener('mouseenter',function(e){var r=p.getBoundingClientRect();p.style.setProperty('--x',((e.clientX-r.left)/r.width*100)+'%');p.style.setProperty('--y',((e.clientY-r.top)/r.height*100)+'%');});
 });
+</script>
+<div id="ck" role="dialog" aria-live="polite" aria-label="Cookies">
+<p>Fem servir Google Analytics per saber quanta gent visita aquest concepte i què hi clica. Només s'activa si ho acceptes.</p>
+<div class="ck-b"><button type="button" class="ck-ok">Acceptar</button><button type="button" class="ck-no">Rebutjar</button></div>
+</div>
+<script>
+(function(){
+  var ID="G-VJYQETF1XX", K="penya-ck";
+  var get=function(){try{return localStorage.getItem(K);}catch(e){return null;}};
+  var put=function(v){try{localStorage.setItem(K,v);}catch(e){}};
+  var load=function(){
+    if(window.gtag) return;
+    window.dataLayer=window.dataLayer||[];
+    window.gtag=function(){dataLayer.push(arguments);};
+    gtag('js',new Date()); gtag('config',ID,{anonymize_ip:true});
+    var s=document.createElement('script'); s.async=true; s.src='https://www.googletagmanager.com/gtag/js?id='+ID; document.head.appendChild(s);
+    document.addEventListener('click',function(e){
+      var a=e.target.closest('a,button'); if(!a||a.closest('#ck')) return;
+      var t=(a.getAttribute('aria-label')||a.textContent||'').trim().replace(/\s+/g,' ').slice(0,60); if(!t) return;
+      gtag('event','clic_boto',{etiqueta:t,seccio:(a.closest('section,header,footer,#menu')||{}).id||''});
+    });
+  };
+  var ck=document.getElementById('ck');
+  var v=get();
+  if(v==='si') load(); else if(v!=='no') ck.classList.add('on');
+  ck.querySelector('.ck-ok').addEventListener('click',function(){put('si');ck.classList.remove('on');load();});
+  ck.querySelector('.ck-no').addEventListener('click',function(){put('no');ck.classList.remove('on');});
+})();
 </script>
 </body>
 </html>
