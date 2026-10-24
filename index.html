@@ -35,7 +35,12 @@
 <meta name="twitter:description" content="Entrades, socis i botiga en un sol lloc, amb la marca i la història al centre. Concepte no oficial per Boira.studio.">
 <meta name="twitter:image" content="https://penya.boira.studio/assets/og-penya.jpg">
 <meta name="twitter:image:alt" content="Així podria ser la Penya: concepte de web no oficial del Club Joventut Badalona">
-<link rel="icon" type="image/png" href="assets/favicon.png">
+<link rel="icon" href="favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
+<link rel="icon" type="image/png" sizes="48x48" href="assets/favicon-48.png">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+<link rel="manifest" href="site.webmanifest">
+<meta name="theme-color" content="#000000">
 <link rel="preload" href="assets/fonts/bebas-neue.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="assets/fonts/montserrat-var.woff2" as="font" type="font/woff2" crossorigin>
 <style>
@@ -278,6 +283,7 @@ section:first-of-type>.wrap{max-width:min(1680px,88vw) !important}
 @view-transition{navigation:auto}
 #site-header{view-transition-name:site-header}
 .logo-home{display:block;line-height:0;transition:opacity .2s}.logo-home:hover{opacity:.85}
+button,input,select,textarea{font-family:inherit}
 a.boira{color:#005441;font-weight:800;text-decoration:underline;text-underline-offset:2px;white-space:nowrap}
 a.boira:hover{color:#000}
 .boira-credit{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;margin-top:22px;padding-top:22px;border-top:1px solid rgba(235,237,236,.3)}
