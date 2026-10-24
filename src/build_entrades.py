@@ -31,6 +31,10 @@ chrome = chrome.replace('<header id="site-header" style="position: absolute; lef
                         '<header id="site-header" style="position: relative; z-index: 5">')
 chrome = chrome.replace('<a href="#calendari" class="m-btn m-solid">Entrades</a>', '<a href="entrades.html" class="m-btn m-solid">Entrades</a>')
 chrome = relink(chrome)
+# A la taquilla, "Fes-te soci" de la capçalera obre els abonaments de la mateixa pàgina
+hdr_soci = '<a href="index.html#socis" style="border: 2px solid #EBEDEC;'
+assert hdr_soci in chrome
+chrome = chrome.replace(hdr_soci, '<a href="entrades.html#abonaments" style="border: 2px solid #EBEDEC;', 1)
 assert 'position: relative; z-index: 5' in chrome
 
 page = '''

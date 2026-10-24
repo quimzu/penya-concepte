@@ -272,6 +272,7 @@ section:first-of-type>.wrap{max-width:min(1680px,88vw) !important}
 }
 @view-transition{navigation:auto}
 #site-header{view-transition-name:site-header}
+.logo-home{display:block;line-height:0;transition:opacity .2s}.logo-home:hover{opacity:.85}
 a.boira{color:#005441;font-weight:800;text-decoration:underline;text-underline-offset:2px;white-space:nowrap}
 a.boira:hover{color:#000}
 .boira-credit{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;margin-top:22px;padding-top:22px;border-top:1px solid rgba(235,237,236,.3)}
@@ -429,7 +430,7 @@ body{font-family:Montserrat,system-ui,sans-serif;color:var(--ink);font-size:15px
 #sub button.on{opacity:1;border-color:var(--acc)}
 #sub .badge{font-family:Montserrat;font-size:11px;font-weight:700;background:var(--acc);color:#000;border-radius:99px;padding:1px 7px;letter-spacing:0}
 #app{padding-top:32px;padding-bottom:64px}
-#app>*{animation:fadein .35s ease both}
+#app.anim>*{animation:fadein .35s ease both}
 @keyframes fadein{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
 @view-transition{navigation:auto}
 #site-header{view-transition-name:site-header}
@@ -455,6 +456,61 @@ body{font-family:Montserrat,system-ui,sans-serif;color:var(--ink);font-size:15px
 #app button{text-align:inherit}
 .pagehead h1{margin:6px 0 0}
 
+/* Plànol: focus de teclat */
+.sec:focus{outline:none}
+.sec:focus-visible{stroke:#EBEDEC;stroke-width:3}
+/* Checkout */
+.steps{list-style:none;display:flex;gap:6px 18px;margin:0 0 22px;flex-wrap:wrap}
+.steps li{display:flex;align-items:center;gap:8px;font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--mut)}
+.steps li span{width:26px;height:26px;border-radius:50%;border:1.5px solid #3a4542;display:grid;place-items:center;font-size:11px;letter-spacing:0}
+.steps li.on{color:var(--ink)}
+.steps li.on span{border-color:var(--acc);color:var(--acc)}
+.steps li.done span{background:var(--acc);border-color:var(--acc);color:#000}
+.hold{display:flex;justify-content:space-between;align-items:center;gap:12px;background:#0b0f0e;border-left:4px solid var(--acc);padding:12px 14px;margin-top:16px;font-size:13px}
+.hold b{font-family:"Bebas Neue";font-size:30px;font-weight:400;letter-spacing:.04em;line-height:1}
+.gw{background:#fff;color:#14181a;border-radius:10px;overflow:hidden;font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+.gw-h{display:flex;justify-content:space-between;align-items:center;padding:14px 18px;border-bottom:1px solid #e6e8ea;font-size:13px;font-weight:600}
+.gw-sim{background:#fff1c7;color:#6e5100;font-size:11px;font-weight:700;padding:3px 9px;border-radius:99px;text-transform:uppercase;letter-spacing:.06em}
+.gw-m{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px;padding:16px 18px 0}
+.gw-m button{border:1.5px solid #dfe3e6;border-radius:8px;padding:11px 4px;font-size:13px;font-weight:600;color:#14181a;background:#fff;text-align:center !important}
+.gw-m button.on{border-color:#005441;background:#eef6f3;color:#005441;box-shadow:0 0 0 1px #005441 inset}
+.gw-b{padding:16px 18px 20px}
+.gw-b label{display:block;font-size:12px;font-weight:600;color:#5b6266;margin:14px 0 6px}
+.gw-in{border:1.5px solid #dfe3e6;border-radius:8px;padding:12px 14px;font-size:15px;letter-spacing:.08em;display:flex;justify-content:space-between;align-items:center;background:#f6f7f8;color:#2a3034}
+.gw-in span{font-size:11px;font-weight:800;color:#1a3a8f;letter-spacing:.1em}
+.gw-2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.gw-test{display:inline-block;font-size:11px;font-weight:700;color:#005441;background:#eef6f3;padding:3px 9px;border-radius:99px}
+.gw-p{font-size:14px;color:#3b4246;line-height:1.55}
+.gw-pay{display:block;width:100%;margin-top:18px;background:#005441;color:#fff;border-radius:8px;padding:15px;font-size:16px;font-weight:700;text-align:center !important;transition:background .2s}
+.gw-pay:hover{background:#00684f}
+.gw-pay.dark{background:#000}
+.gw-f{padding:12px 18px;background:#f4f6f7;font-size:12px;color:#5b6266;display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap}
+.ov{position:fixed;inset:0;z-index:80;background:rgba(0,0,0,.72);display:grid;place-items:center;padding:16px;animation:fadein .2s ease both}
+.ov-box{background:#fff;color:#14181a;border-radius:14px;max-width:380px;width:100%;padding:28px 24px 24px;text-align:center;font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;box-shadow:0 24px 70px rgba(0,0,0,.55)}
+.ov-box h4{font-size:19px;margin:8px 0 6px;font-family:inherit;font-weight:700}
+.ov-box p{font-size:14px;color:#4a5155;line-height:1.5}
+.ov .bank{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:#6b7378}
+.ov-amt{font-size:34px;font-weight:800;margin:10px 0}
+.ov-btns{display:grid;gap:8px;margin-top:20px}
+.ov-btns button{padding:14px;border-radius:9px;font-weight:700;font-size:15px;text-align:center !important}
+.ov-ok{background:#005441;color:#fff}
+.ov-ok.dark{background:#000}
+.ov-no{background:#eef0f1;color:#14181a}
+.ov-spin{width:38px;height:38px;border:4px solid #dfe3e6;border-top-color:#005441;border-radius:50%;margin:4px auto 14px;animation:s .8s linear infinite}
+.ov-tick{width:52px;height:52px;border-radius:50%;background:#005441;color:#fff;display:grid;place-items:center;font-size:26px;margin:0 auto 10px}
+.receipt{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:2px;margin:26px 0 18px}
+.receipt div{background:var(--card);padding:16px 18px}
+.receipt small{display:block;font-size:11px;color:var(--mut);text-transform:uppercase;letter-spacing:.12em;margin-bottom:4px}
+.receipt b{font-family:"Bebas Neue";font-weight:400;font-size:26px;line-height:1}
+.acts{display:flex;gap:8px;flex-wrap:wrap;justify-content:center;margin:0 0 26px}
+#toast{position:fixed;left:50%;bottom:24px;transform:translate(-50%,16px);background:var(--ink);color:#000;padding:12px 18px;font-size:13px;font-weight:600;font-family:Montserrat,sans-serif;opacity:0;pointer-events:none;transition:opacity .3s,transform .3s;z-index:90;max-width:calc(100% - 32px);text-align:center}
+#toast.on{opacity:1;transform:translate(-50%,0)}
+@media (max-width:420px){.gw-m{grid-template-columns:1fr 1fr}}
+@media (prefers-reduced-motion:reduce){.ov,.ov-spin{animation:none}}
+
+@media (max-width:420px){#site-header a[href$="#abonaments"]{padding:8px 12px !important;font-size:17px !important}}
+@media (max-width:420px){.steps{gap:6px 12px}.steps li{font-size:10.5px;letter-spacing:.08em;gap:6px}.steps li span{width:22px;height:22px}}
+
 </style>
 </head>
 <body>
@@ -464,7 +520,7 @@ body{font-family:Montserrat,system-ui,sans-serif;color:var(--ink);font-size:15px
 <header id="site-header" style="position: relative; z-index: 5">
 <div class="wrap" style="display: flex; justify-content: space-between; align-items: center; height: 96px; gap: 24px">
 <div style="display: flex; align-items: center; gap: 36px">
-<img src="assets/escut.png" alt="Escut del Club Joventut Badalona" style="height: 64px; width: auto; display: block">
+<a href="index.html" class="logo-home" aria-label="Inici · Club Joventut Badalona"><img src="assets/escut.png" alt="" style="height: 64px; width: auto; display: block"></a>
 <nav class="sm-hide" aria-label="Principal" style="gap: 28px; font-family: 'Bebas Neue', sans-serif; font-size: 20px; letter-spacing: 0.08em">
 <a href="index.html#calendari" style="text-decoration: none">Partits</a>
 <a href="#" style="text-decoration: none">Equips</a>
@@ -474,8 +530,8 @@ body{font-family:Montserrat,system-ui,sans-serif;color:var(--ink);font-size:15px
 </nav>
 </div>
 <div style="display: flex; align-items: center; gap: 16px">
-<a href="#" class="sm-hide" style="font-size: 13px; font-weight: 600; text-decoration: none">Accedeix</a>
-<a href="index.html#socis" style="border: 2px solid #EBEDEC; text-decoration: none; padding: 10px 18px; font-family: 'Bebas Neue', sans-serif; font-size: 20px; letter-spacing: 0.08em; line-height: 1">Fes-te soci</a>
+<a href="entrades.html#les-meves" class="sm-hide" style="font-size: 13px; font-weight: 600; text-decoration: none">Accedeix</a>
+<a href="entrades.html#abonaments" style="border: 2px solid #EBEDEC; text-decoration: none; padding: 10px 18px; font-family: 'Bebas Neue', sans-serif; font-size: 20px; letter-spacing: 0.08em; line-height: 1">Fes-te soci</a>
 <button type="button" class="burger" id="burger" aria-label="Obre el menú" aria-expanded="false" aria-controls="menu"><span></span><span></span><span></span></button>
 </div>
 </div>
@@ -627,7 +683,7 @@ function arc(s){const g=s.ring==='inner'?1.2:.9,a0=s.a0+g,a1=s.a1-g,n=10,p=[];
 function mapSVG(sel,isOff){
   const secs=SECTORS.map(s=>{const z=Z(s.zone),off=isOff&&isOff(s),[lx,ly]=pt((s.r0+s.r1)/2,(s.a0+s.a1)/2);
     const fs=s.ring==='outer'?10:s.ring==='middle'?9.5:9;
-    return `<path class="sec${off?' off':''}" d="${arc(s)}" fill="${off?'#151a19':z.color}" stroke="${sel===s.id?'#EBEDEC':'#000'}" stroke-width="${sel===s.id?3:1}" opacity="${sel&&sel!==s.id&&!off?.5:1}" ${off?'':`onclick="pickSector('${s.id}')"`}><title>Sector ${s.id} · ${z.name}${off?' · no disponible':''}</title></path>
+    return `<path class="sec${off?' off':''}" d="${arc(s)}" fill="${off?'#151a19':z.color}" stroke="${sel===s.id?'#EBEDEC':'#000'}" stroke-width="${sel===s.id?3:1}" opacity="${sel&&sel!==s.id&&!off?.5:1}" ${off?'aria-disabled="true"':`tabindex="0" role="button" aria-label="Sector ${s.id}, ${z.name}" onclick="pickSector('${s.id}')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();pickSector('${s.id}')}"`}><title>Sector ${s.id} · ${z.name}${off?' · no disponible':''}</title></path>
     <text class="lbl" x="${lx.toFixed(1)}" y="${(ly+3.3).toFixed(1)}" text-anchor="middle" font-size="${fs}" fill="${off?'#3a4441':z.txt}">${s.id}</text>`}).join('');
   return `<svg class="map" viewBox="0 0 360 462" role="img" aria-label="Plànol de sectors del Palau Olímpic de Badalona">
    <ellipse cx="${CX}" cy="${CY}" rx="${RX}" ry="${RY}" fill="#0a0e0d" stroke="#26302d" stroke-width="1.5"/>
@@ -783,7 +839,15 @@ function vPlan(){
 }
 const planTotal=()=>{const p=P(S.planId);return p.flat||Math.round(Z(SEC(S.sector).zone).season*p.f)};
 
-/* ---------- Compra ---------- */
+/* =========================================================
+   Compra · checkout simulat
+   Dades → Pagament (passarel·la de prova) → Verificació del banc → Entrades
+   Cap camp accepta dades de pagament reals: la targeta és de prova i no editable.
+   ========================================================= */
+const HOLD_MIN=10;
+let holdTimer=null;
+const mmss=ms=>{const s=Math.max(0,Math.ceil(ms/1000));return String(Math.floor(s/60)).padStart(2,'0')+':'+String(s%60).padStart(2,'0')};
+const hasSeats=c=>!!(c.seats&&c.seats.length);
 function startCheckout(){
   let c;
   if(S.view==='match'){const m=M(S.matchId);
@@ -792,10 +856,19 @@ function startCheckout(){
   else if(S.view==='pack')c={kind:'pack',matchId:PACK.match,sector:S.sector,zone:SEC(S.sector).zone,seats:S.seats.map(x=>({...x})),total:PACK.price};
   else{const p=P(S.planId);c=p.noSeat?{kind:'season',planId:p.id,seats:[],total:p.flat}
     :{kind:'season',planId:p.id,sector:S.sector,zone:SEC(S.sector).zone,seats:S.seats.map(x=>({...x})),total:planTotal()}}
-  S={tab:S.tab,view:'checkout',cart:c,prev:{...S},form:{name:'',email:'',terms:false},err:''};render();topOfApp();
+  S={tab:S.tab,view:'checkout',step:'dades',cart:c,prev:{...S},form:{name:'',email:'',terms:false},method:'card',err:'',overlay:null,holdUntil:Date.now()+HOLD_MIN*60000};
+  render();topOfApp();startHold();
 }
+function startHold(){clearInterval(holdTimer);holdTimer=setInterval(()=>{
+  if(S.view!=='checkout'){clearInterval(holdTimer);return}
+  const left=S.holdUntil-Date.now();
+  if(left<=0&&!S.overlay){clearInterval(holdTimer);S.step='expired';render();return}
+  const el=$('#hold');if(el)el.textContent=mmss(left);
+},1000)}
+function leaveCheckout(){clearInterval(holdTimer);S=S.prev;render();topOfApp()}
+function stepper(n){return `<ol class="steps" aria-label="Passos de la compra">${['Dades','Pagament','Entrades'].map((l,i)=>`<li class="${i<n?'done':i===n?'on':''}" ${i===n?'aria-current="step"':''}><span>${i<n?'✓':i+1}</span>${l}</li>`).join('')}</ol>`}
 function summary(c){
-  if(c.kind==='pack')return `<b>Pack cap de setmana</b><div class="muted">3 partits · Sector ${c.sector} · Fila ${c.seats[0].row} · Seient ${c.seats[0].seat} per al Bilbao</div>`;
+  if(c.kind==='pack')return `<b>Pack cap de setmana</b><div class="muted">3 partits · Seient per al Bilbao: sector ${c.sector}, fila ${c.seats[0].row}, seient ${c.seats[0].seat}</div><div class="row"><span>1 × Pack adult</span><span>${eur(PACK.price)}</span></div>`;
   if(c.kind==='match'){const m=M(c.matchId);
    const lines=m.seated?c.seats.map(x=>{const t=T(x.type);return `<div class="row"><span>Fila ${x.row} · Seient ${x.seat} <span class="muted">· ${t.name}</span></span><span>${eur(typePrice(m,Z(c.zone),t))}</span></div>`}).join('')
      :TYPES.filter(t=>c.qty[t.id]).map(t=>`<div class="row"><span>${c.qty[t.id]} × ${t.name}</span><span>${eur(c.qty[t.id]*m.ga[t.id])}</span></div>`).join('');
@@ -803,40 +876,95 @@ function summary(c){
   const p=P(c.planId);
   return `<b>${p.name}</b><div class="muted">Temporada 2026/27${c.sector?` · Sector ${c.sector} · ${Z(c.zone).name}<br>${c.seats.map(x=>`Fila ${x.row} · Seient ${x.seat}`).join(' · ')}`:' · sense seient fix'}</div>`;
 }
+const totals=c=>`<div class="row"><span>Subtotal</span><span>${eur(c.total)}</span></div><div class="row"><span>Despeses de gestió</span><span>0 €</span></div><div class="row" style="border:0"><b>Total</b><b class="bb" style="font-size:34px">${c.total?eur(c.total):'0 €'}</b></div>`;
+function sidebar(c){return `<div class="card side"><h3>Resum</h3>${summary(c)}<div style="margin-top:10px">${totals(c)}</div>
+  ${S.step!=='expired'?`<div class="hold"><span>${hasSeats(c)?'Seients reservats per a tu':'Comanda reservada'}</span><b id="hold" aria-live="off">${mmss(S.holdUntil-Date.now())}</b></div>`:''}</div>`}
 function vCheckout(){
-  const c=S.cart,f=S.form;
-  return `<button class="back" onclick="S=S.prev;render()">← Enrere</button>
-  <div class="hero"><span class="kicker">Últim pas</span><h2>Finalitza la compra</h2></div>
-  <div class="cols"><div class="card"><h3>Les teves dades</h3>
-   <label for="n">Nom i cognoms${c.kind==='season'?' del titular':''}</label><input class="field" id="n" value="${esc(f.name)}" oninput="S.form.name=this.value" autocomplete="name">
-   <label for="e">Correu electrònic</label><input class="field" id="e" type="email" value="${esc(f.email)}" oninput="S.form.email=this.value" autocomplete="email">
-   <label class="check"><input type="checkbox" ${f.terms?'checked':''} onchange="S.form.terms=this.checked"> Accepto les condicions de compra i la política de privacitat.</label>
-   <div class="paybox">Aquí aniria la passarel·la de pagament (Redsys, Bizum, Apple Pay, Google Pay).<br>En aquest concepte el pagament és simulat i no es cobra res.</div>
-   ${S.err?`<div class="err" role="alert">${S.err}</div>`:''}
-   <button class="btn full" id="pay" onclick="pay()" style="margin-top:14px">Pagar ${eur(c.total)} · simulat</button></div>
-  <div class="card side"><h3>Resum</h3>${summary(c)}<div class="row" style="margin-top:6px"><b>Total</b><b class="bb" style="font-size:30px">${eur(c.total)}</b></div></div></div>`;
+  const c=S.cart,f=S.form,err=S.err?`<div class="err" role="alert">${S.err}</div>`:'';
+  if(S.step==='expired')return `<div class="hero"><span class="kicker">Finalitza la compra</span><h2>S'ha acabat el temps</h2></div>${stepper(0)}
+   <div class="card"><p>Han passat ${HOLD_MIN} minuts i hem alliberat ${hasSeats(c)?'els seients':'la reserva'} perquè altres penyistes els puguin comprar. No s'ha fet cap càrrec.</p>
+   <button class="btn" style="margin-top:18px" onclick="S=S.prev;if(S.seats)S.seats=[];render();topOfApp()">Torna a triar</button></div>`;
+  if(S.step==='dades')return `<button class="back" onclick="leaveCheckout()">← Enrere</button>
+   <div class="hero"><span class="kicker">Finalitza la compra</span><h2>Les teves dades</h2></div>${stepper(0)}
+   <div class="cols"><div class="card"><h3>Qui ve a l'Olímpic?</h3>
+    <label for="n">Nom i cognoms${c.kind==='season'?' del titular':''}</label><input class="field" id="n" value="${esc(f.name)}" oninput="S.form.name=this.value" autocomplete="name">
+    <label for="e">Correu electrònic</label><input class="field" id="e" type="email" inputmode="email" value="${esc(f.email)}" oninput="S.form.email=this.value" autocomplete="email">
+    <p class="muted" style="margin-top:6px">Hi enviarem ${c.kind==='season'?'el carnet':'les entrades'} i el rebut.</p>
+    <label class="check"><input type="checkbox" id="t" ${f.terms?'checked':''} onchange="S.form.terms=this.checked"> Accepto les condicions de compra i la política de privacitat.</label>
+    ${err}
+    <button class="btn full" style="margin-top:18px" onclick="toPay()">${c.total?'Continuar al pagament':'Confirmar entrades gratuïtes'}</button></div>
+   ${sidebar(c)}</div>`;
+  // pas de pagament
+  const methods=[['card','Targeta'],['bizum','Bizum'],['apple','Apple Pay'],['google','Google Pay']];
+  return `<button class="back" onclick="S.step='dades';S.err='';render()">← Les teves dades</button>
+  <div class="hero"><span class="kicker">Finalitza la compra</span><h2>Pagament</h2></div>${stepper(1)}
+  <div class="cols"><div>
+   <div class="gw">
+    <div class="gw-h"><span>🔒 Pagament segur</span><span class="gw-sim">Simulació</span></div>
+    <div class="gw-m" role="radiogroup" aria-label="Mètode de pagament">${methods.map(([id,l])=>`<button role="radio" aria-checked="${S.method===id}" class="${S.method===id?'on':''}" onclick="S.method='${id}';S.err='';render()">${l}</button>`).join('')}</div>
+    <div class="gw-b">${gwBody(c)}</div>
+    <div class="gw-f"><span>Comerç: Club Joventut Badalona</span><span>Import <b>${eur(c.total)}</b></span></div>
+   </div>
+   ${err}
+   <p class="muted" style="margin-top:12px">Passarel·la de demostració: no es cobra res i no es demanen dades de pagament reals.</p>
+  </div>${sidebar(c)}</div>${S.overlay?overlayHTML(c):''}`;
 }
-function pay(){
-  const f=S.form;
-  if(!f.name.trim())return S.err='Escriu el nom i cognoms.',render();
-  if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(f.email))return S.err='El correu no sembla vàlid.',render();
-  if(!f.terms)return S.err='Cal acceptar les condicions.',render();
-  const b=$('#pay');b.disabled=true;b.innerHTML='<span class="spinner"></span> Processant…';
-  setTimeout(()=>{
-    const c=S.cart;let tickets=[];
-    if(c.kind==='match'){const m=M(c.matchId);
-      if(m.seated)tickets=c.seats.map(x=>({code:code(),label:T(x.type).name,matchId:m.id,row:x.row,seat:x.seat}));
-      else TYPES.forEach(t=>{for(let i=0;i<c.qty[t.id];i++)tickets.push({code:code(),label:t.name,matchId:m.id})});}
-    else if(c.kind==='pack'){tickets=[{code:code(),label:'Pack · Adult',matchId:PACK.match,row:c.seats[0].row,seat:c.seats[0].seat},
-      ...PACK.extra.map(id=>({code:code(),label:'Pack · Adult',matchId:id}))];}
-    else{const p=P(c.planId);
-      const labels=p.id==='familiar'?['Adult','Adult','Infantil','Infantil']:[p.id==='jove'?'Jove':p.id==='infantil'?'Infantil':'Adult'];
-      tickets=p.noSeat?[{code:code(),label:'Aficionat'}]:c.seats.map((x,i)=>({code:code(),label:labels[i],row:x.row,seat:x.seat}));}
-    const o={id:'C'+Date.now().toString(36).toUpperCase(),...c,name:f.name.trim(),email:f.email.trim(),at:new Date().toISOString(),tickets};
-    db.orders.unshift(o);save();
-    S={tab:'mine',view:'done',orderId:o.id};setHash('les-meves');render();topOfApp();
-  },1100);
+function gwBody(c){
+  const amt=eur(c.total);
+  if(S.method==='card')return `<span class="gw-test">Targeta de prova</span>
+    <label>Número de targeta</label><div class="gw-in">4242 4242 4242 4242<span>VISA</span></div>
+    <div class="gw-2"><div><label>Caducitat</label><div class="gw-in">12 / 28</div></div><div><label>CVC</label><div class="gw-in">•••</div></div></div>
+    <button class="gw-pay" onclick="startPay()">Pagar ${amt}</button>`;
+  if(S.method==='bizum')return `<p class="gw-p">T'enviarem una sol·licitud de pagament a l'app del teu banc. L'hauràs d'acceptar des del mòbil.</p>
+    <button class="gw-pay" onclick="startPay()">Pagar ${amt} amb Bizum</button>`;
+  const n=S.method==='apple'?'Apple Pay':'Google Pay';
+  return `<p class="gw-p">S'obrirà la finestra de pagament del teu dispositiu amb la targeta que hi tinguis desada.</p>
+    <button class="gw-pay dark" onclick="startPay()">Pagar amb ${n}</button>`;
 }
+function overlayHTML(c){
+  const amt=eur(c.total),wallet=S.method==='apple'||S.method==='google',wn=S.method==='apple'?'Apple Pay':'Google Pay';
+  let box='';
+  if(S.overlay==='connect')box=`<div class="ov-spin"></div><h4>Connectant amb ${S.method==='bizum'?'Bizum':wallet?wn:'el teu banc'}…</h4><p>No tanquis aquesta finestra.</p>`;
+  if(S.overlay==='verify')box=wallet
+   ?`<span class="bank">${wn} · simulació</span><h4>Club Joventut Badalona</h4><div class="ov-amt">${amt}</div><p>Targeta desada acabada en 4242</p>
+     <div class="ov-btns"><button class="ov-ok dark" data-autofocus onclick="confirmPay()">Confirmar amb ${S.method==='apple'?'Face ID':'empremta'}</button><button class="ov-no" onclick="cancelPay()">Cancel·lar</button></div>`
+   :`<span class="bank">${S.method==='bizum'?'Bizum':'Banc de prova · 3D Secure'} · simulació</span><h4>${S.method==='bizum'?'Accepta la sol·licitud':'Verifica el pagament'}</h4>
+     <p>${S.method==='bizum'?'Club Joventut Badalona et demana':'Pagament a Club Joventut Badalona amb la targeta ···· 4242 per'}</p><div class="ov-amt">${amt}</div>
+     <p style="font-size:12px">En un pagament real ho confirmaries a l'app del teu banc.</p>
+     <div class="ov-btns"><button class="ov-ok" data-autofocus onclick="confirmPay()">Confirmar</button><button class="ov-no" onclick="cancelPay()">Cancel·lar</button></div>`;
+  if(S.overlay==='ok')box=`<div class="ov-tick">✓</div><h4>Pagament acceptat</h4><p>Generant ${c.kind==='season'?'el carnet':'les entrades'}…</p>`;
+  return `<div class="ov" role="dialog" aria-modal="true" aria-label="Pagament"><div class="ov-box">${box}</div></div>`;
+}
+function toPay(){
+  const f=S.form;S.err='';
+  if(!f.name.trim()){S.err='Escriu el nom i cognoms.';render();$('#n').focus();return}
+  if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(f.email.trim())){S.err='El correu no sembla vàlid.';render();$('#e').focus();return}
+  if(!f.terms){S.err='Cal acceptar les condicions de compra.';render();$('#t').focus();return}
+  if(!S.cart.total)return finalize('free');
+  S.step='pagament';render();topOfApp();
+}
+function startPay(){S.err='';S.overlay='connect';render();setTimeout(()=>{if(S.overlay==='connect'){S.overlay='verify';render()}},1300)}
+function cancelPay(){S.overlay=null;S.err='Has cancel·lat el pagament. No s\'ha fet cap càrrec.';render()}
+function confirmPay(){S.overlay='ok';render();setTimeout(()=>finalize(S.method),1100)}
+addEventListener('keydown',e=>{if(e.key==='Escape'&&S.view==='checkout'&&S.overlay==='verify')cancelPay()});
+const METHOD={card:'Targeta ···· 4242',bizum:'Bizum',apple:'Apple Pay',google:'Google Pay',free:'Sense cost'};
+function finalize(method){
+  clearInterval(holdTimer);
+  const c=S.cart,f=S.form;let tickets=[];
+  if(c.kind==='match'){const m=M(c.matchId);
+    if(m.seated)tickets=c.seats.map(x=>({code:code(),label:T(x.type).name,matchId:m.id,row:x.row,seat:x.seat}));
+    else TYPES.forEach(t=>{for(let i=0;i<c.qty[t.id];i++)tickets.push({code:code(),label:t.name,matchId:m.id})});}
+  else if(c.kind==='pack'){tickets=[{code:code(),label:'Pack · Adult',matchId:PACK.match,row:c.seats[0].row,seat:c.seats[0].seat},
+    ...PACK.extra.map(id=>({code:code(),label:'Pack · Adult',matchId:id}))];}
+  else{const p=P(c.planId);
+    const labels=p.id==='familiar'?['Adult','Adult','Infantil','Infantil']:[p.id==='jove'?'Jove':p.id==='infantil'?'Infantil':'Adult'];
+    tickets=p.noSeat?[{code:code(),label:'Aficionat'}]:c.seats.map((x,i)=>({code:code(),label:labels[i],row:x.row,seat:x.seat}));}
+  const o={id:'CJB-'+Date.now().toString(36).toUpperCase().slice(-6),...c,name:f.name.trim(),email:f.email.trim(),at:new Date().toISOString(),method,tickets};
+  db.orders.unshift(o);save();
+  S={tab:'mine',view:'done',orderId:o.id};setHash('les-meves');render();topOfApp();
+}
+function toast(t){let el=$('#toast');if(!el){el=document.createElement('div');el.id='toast';el.setAttribute('role','status');document.body.appendChild(el)}
+  el.textContent=t;el.classList.add('on');clearTimeout(el._t);el._t=setTimeout(()=>el.classList.remove('on'),2800)}
 function ticketsHTML(o){
   return `<div class="tickets">`+o.tickets.map(t=>{
     const m=t.matchId&&M(t.matchId);
@@ -847,12 +975,21 @@ function ticketsHTML(o){
     return `<div class="ticket"><div class="top"><div><small>${kind} · ${t.label}</small><h4>${esc(head)}</h4><div style="font-size:12px">${sub}</div></div><img src="assets/escut.png" alt=""></div>
      <div class="body">${qr(t.code)}<div><div style="font-size:10px;color:#5d6663;text-transform:uppercase;letter-spacing:.06em">Titular</div><b>${esc(o.name)}</b>${where}<div class="code">${t.code}</div></div></div></div>`}).join('')+`</div>`;
 }
+function walletActs(){return `<div class="acts">
+  <button class="btn" onclick="toast('Concepte: aquí s\\'afegirien les entrades a Apple Wallet.')">Afegir a Apple Wallet</button>
+  <button class="btn" onclick="toast('Concepte: aquí s\\'afegirien les entrades a Google Wallet.')">Afegir a Google Wallet</button>
+  <button class="btn ghost" onclick="toast('Concepte: aquí es descarregaria el PDF de les entrades.')">Descarregar PDF</button></div>`}
 function vDone(){
   const o=db.orders.find(x=>x.id===S.orderId);
-  return `<div class="ok" aria-hidden="true">✓</div><div class="center"><h2 style="font-size:56px">Ens veiem a l'Olímpic!</h2>
-   <p class="muted" style="margin-top:8px">Comanda ${o.id} · ${eur(o.total)}<br>En la versió real, rebries les entrades a ${esc(o.email)} i les podries afegir al Wallet.</p></div>
-   <div style="margin:26px 0">${ticketsHTML(o)}</div>
-   <div class="center"><button class="btn ghost" onclick="go('matches')">Tornar als partits</button></div>`;
+  if(!o){setTimeout(()=>go('mine'));return ''}
+  const d=new Date(o.at);
+  return `${stepper(3)}<div class="ok" aria-hidden="true">✓</div><div class="center"><span class="kicker">Compra confirmada</span><h2 style="font-size:clamp(48px,7vw,80px)">Ens veiem a l'Olímpic!</h2>
+   <p class="muted" style="margin-top:10px">Hem enviat ${o.kind==='season'?'el carnet':'les entrades'} i el rebut a <b style="color:var(--ink)">${esc(o.email)}</b> <span>(simulat)</span>.</p></div>
+   <div class="receipt"><div><small>Comanda</small><b>${o.id}</b></div><div><small>Data</small><b>${d.toLocaleDateString('ca-ES')} · ${d.toLocaleTimeString('ca-ES',{hour:'2-digit',minute:'2-digit'})}</b></div>
+    <div><small>Pagament</small><b>${METHOD[o.method]||'Targeta'}</b></div><div><small>Total</small><b>${o.total?eur(o.total):'0 €'}</b></div></div>
+   ${walletActs()}
+   ${ticketsHTML(o)}
+   <div class="center" style="margin-top:28px"><button class="btn ghost" onclick="go('matches')">Tornar als partits</button></div>`;
 }
 function orderTitle(o){if(o.kind==='pack')return 'Pack cap de setmana';if(o.kind==='match')return title(M(o.matchId));return P(o.planId).name}
 function vMine(){
@@ -883,7 +1020,10 @@ function vAdmin(){
 function render(){
   const v={matches:vMatches,match:vMatch,pack:vPack,season:vSeason,plan:vPlan,checkout:vCheckout,done:vDone,mine:vMine,admin:vAdmin}[S.view];
   const old=$('#seats');if(old)S.sl=old.scrollLeft;
+  const key=S.view+'|'+(S.step||'')+'|'+(S.matchId||S.planId||'');
+  $('#app').classList.toggle('anim',key!==render.last);render.last=key;
   $('#app').innerHTML=v();
+  const af=$('[data-autofocus]');if(af)af.focus();
   const g=$('#seats');if(g)g.scrollLeft=S.sl!=null?S.sl:(g.scrollWidth-g.clientWidth)/2;
   let bar='';
   if(S.view==='match'){const m=M(S.matchId);
@@ -907,9 +1047,8 @@ function route(){
   if(h==='panell')return go('admin',false);
   S={tab:'matches',view:'matches'};render();
 }
-// Si el bàner de cookies és obert, la barra del total queda per sobre i no la tapa
-function placeBar(){const ck=document.querySelector('#ck.on'),b=$('#bar');if(b)b.style.bottom=ck?(ck.offsetHeight+24)+'px':'0'}
-document.addEventListener('click',e=>{if(e.target.closest('#ck'))setTimeout(placeBar,60)});
+// Si hi ha barra del total, el bàner de cookies s'aixeca per sobre i no la tapa
+function placeBar(){const ck=$('#ck'),b=$('#bar .in');if(ck)ck.style.bottom=b?(b.offsetHeight+16)+'px':''}
 addEventListener('resize',placeBar);
 addEventListener('load',placeBar);
 addEventListener('hashchange',route);

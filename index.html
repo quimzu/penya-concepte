@@ -272,6 +272,7 @@ section:first-of-type>.wrap{max-width:min(1680px,88vw) !important}
 }
 @view-transition{navigation:auto}
 #site-header{view-transition-name:site-header}
+.logo-home{display:block;line-height:0;transition:opacity .2s}.logo-home:hover{opacity:.85}
 a.boira{color:#005441;font-weight:800;text-decoration:underline;text-underline-offset:2px;white-space:nowrap}
 a.boira:hover{color:#000}
 .boira-credit{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;margin-top:22px;padding-top:22px;border-top:1px solid rgba(235,237,236,.3)}
@@ -287,7 +288,7 @@ a.boira:hover{color:#000}
 <header id="site-header" style="position: absolute; left: 0; right: 0; top: 34px; z-index: 5">
 <div class="wrap" style="display: flex; justify-content: space-between; align-items: center; height: 96px; gap: 24px">
 <div style="display: flex; align-items: center; gap: 36px">
-<img src="assets/escut.png" alt="Escut del Club Joventut Badalona" style="height: 64px; width: auto; display: block">
+<a href="index.html" class="logo-home" aria-label="Inici · Club Joventut Badalona"><img src="assets/escut.png" alt="" style="height: 64px; width: auto; display: block"></a>
 <nav class="sm-hide" aria-label="Principal" style="gap: 28px; font-family: 'Bebas Neue', sans-serif; font-size: 20px; letter-spacing: 0.08em">
 <a href="#calendari" style="text-decoration: none">Partits</a>
 <a href="#" style="text-decoration: none">Equips</a>
@@ -297,7 +298,7 @@ a.boira:hover{color:#000}
 </nav>
 </div>
 <div style="display: flex; align-items: center; gap: 16px">
-<a href="#" class="sm-hide" style="font-size: 13px; font-weight: 600; text-decoration: none">Accedeix</a>
+<a href="entrades.html#les-meves" class="sm-hide" style="font-size: 13px; font-weight: 600; text-decoration: none">Accedeix</a>
 <a href="#socis" style="border: 2px solid #EBEDEC; text-decoration: none; padding: 10px 18px; font-family: 'Bebas Neue', sans-serif; font-size: 20px; letter-spacing: 0.08em; line-height: 1">Fes-te soci</a>
 <button type="button" class="burger" id="burger" aria-label="Obre el menú" aria-expanded="false" aria-controls="menu"><span></span><span></span><span></span></button>
 </div>
