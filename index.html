@@ -270,6 +270,8 @@ section:first-of-type{background:#000}
 section:first-of-type h1{font-size:clamp(152px,8.4vw,230px) !important}
 section:first-of-type>.wrap{max-width:min(1680px,88vw) !important}
 }
+@view-transition{navigation:auto}
+#site-header{view-transition-name:site-header}
 a.boira{color:#005441;font-weight:800;text-decoration:underline;text-underline-offset:2px;white-space:nowrap}
 a.boira:hover{color:#000}
 .boira-credit{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;margin-top:22px;padding-top:22px;border-top:1px solid rgba(235,237,236,.3)}
@@ -305,7 +307,7 @@ a.boira:hover{color:#000}
 <div class="menu-media" aria-hidden="true"><img src="assets/esmaixada.jpg" alt="" data-i="0" loading="lazy"><img src="assets/menu_equips.jpg" alt="" data-i="1" loading="lazy"><img src="assets/menu_cantera.jpg" alt="" data-i="2" loading="lazy"><img src="assets/menu_historia.jpg" alt="" data-i="3" loading="lazy"><img src="assets/menu_olimpic.jpg" alt="" data-i="4" loading="lazy"><img src="assets/menu_botiga.jpg" alt="" data-i="5" loading="lazy"><img src="assets/menu_socis.jpg" alt="" data-i="6" loading="lazy"><img src="assets/grup.jpg" alt="" data-i="7" loading="lazy"></div>
 <nav aria-label="Menú principal" class="menu-in">
 <ul><li><a href="#calendari" data-i="0">Pròxims partits</a></li><li><a href="#" data-i="1">Equips</a></li><li><a href="#" data-i="2">Cantera</a></li><li><a href="#" data-i="3">Història</a></li><li><a href="#olimpic" data-i="4">L'Olímpic</a></li><li><a href="#" data-i="5">Botiga</a></li><li><a href="#socis" data-i="6">Socis</a></li><li><a href="#" data-i="7">Notícies</a></li></ul>
-<div class="menu-side"><div class="menu-cta"><a href="#calendari" class="m-btn m-solid">Entrades</a><a href="#" class="m-btn">Botiga</a></div>
+<div class="menu-side"><div class="menu-cta"><a href="entrades.html" class="m-btn m-solid">Entrades</a><a href="#" class="m-btn">Botiga</a></div>
 <div class="menu-foot"><a href="#">Instagram</a><a href="#">TikTok</a><a href="#">YouTube</a><a href="#">X</a></div></div>
 </nav>
 </div>
@@ -325,7 +327,7 @@ a.boira:hover{color:#000}
 <div style="background: #005441; padding: 16px 12px; text-align: center"><div style="font-family: 'Bebas Neue', sans-serif; font-size: 56px; line-height: 1"><span id="cd-s">00</span></div><div style="font-size: 11px; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; opacity: 0.9">Segons</div></div>
 </div>
 <div style="display: flex; flex-direction: column; gap: 10px">
-<a href="#" style="background: #005441; text-decoration: none; padding: 20px 40px; font-family: 'Bebas Neue', sans-serif; font-size: 28px; letter-spacing: 0.08em; text-align: center">Comprar entrades</a>
+<a href="entrades.html#partit-masc-bilbao" style="background: #005441; text-decoration: none; padding: 20px 40px; font-family: 'Bebas Neue', sans-serif; font-size: 28px; letter-spacing: 0.08em; text-align: center">Comprar entrades</a>
 <span style="font-size: 13px; opacity: 0.9">Diumenge 1 de novembre · 12:00 · Palau Olímpic</span>
 </div>
 </div>
@@ -400,7 +402,7 @@ a.boira:hover{color:#000}
 <span style="font-size: 12px; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase">30 oct – 1 nov · Palau Olímpic</span>
 <h2 style="margin: 0; font-family: 'Bebas Neue', sans-serif; font-weight: 400; font-size: 88px; line-height: 0.88">3 partits, 3 dies.<br>Cap de setmana verd-i-negre</h2>
 </div>
-<a href="#" style="background: #000000; text-decoration: none; padding: 18px 28px; font-family: 'Bebas Neue', sans-serif; font-size: 24px; letter-spacing: 0.08em">Pack cap de setmana · 39 €</a>
+<a href="entrades.html#pack" style="background: #000000; text-decoration: none; padding: 18px 28px; font-family: 'Bebas Neue', sans-serif; font-size: 24px; letter-spacing: 0.08em">Pack cap de setmana · 39 €</a>
 </div>
 <div class="wk">
 <div style="position: relative; height: 320px; overflow: hidden; background: #000000">
@@ -409,7 +411,7 @@ a.boira:hover{color:#000}
 <div style="position: absolute; left: 22px; right: 22px; bottom: 22px; display: flex; flex-direction: column; gap: 6px">
 <span style="font-size: 11px; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: #5fae96">Divendres 30 · 20:15 · Lliga U J6</span>
 <span style="font-family: 'Bebas Neue', sans-serif; font-size: 34px; line-height: 1">U22 vs UCAM Murcia Juver</span>
-<a href="#" style="font-size: 13px; font-weight: 600">Entrades →</a>
+<a href="entrades.html#partit-u22-ucam" style="font-size: 13px; font-weight: 600">Entrades →</a>
 </div>
 </div>
 <div style="position: relative; height: 320px; overflow: hidden; background: #000000">
@@ -418,7 +420,7 @@ a.boira:hover{color:#000}
 <div style="position: absolute; left: 22px; right: 22px; bottom: 22px; display: flex; flex-direction: column; gap: 6px">
 <span style="font-size: 11px; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: #5fae96">Dissabte 31 · 19:00 · LF Challenge J8</span>
 <span style="font-family: 'Bebas Neue', sans-serif; font-size: 34px; line-height: 1">Femení vs Recoletas Zamora</span>
-<a href="#" style="font-size: 13px; font-weight: 600">Entrades →</a>
+<a href="entrades.html#partit-fem-zamora" style="font-size: 13px; font-weight: 600">Entrades →</a>
 </div>
 </div>
 <div style="position: relative; height: 320px; overflow: hidden; background: #000000">
@@ -427,7 +429,7 @@ a.boira:hover{color:#000}
 <div style="position: absolute; left: 22px; right: 22px; bottom: 22px; display: flex; flex-direction: column; gap: 6px">
 <span style="font-size: 11px; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: #5fae96">Diumenge 1 · 12:00 · Lliga Endesa J6</span>
 <span style="font-family: 'Bebas Neue', sans-serif; font-size: 34px; line-height: 1">Asisa Joventut vs Surne Bilbao</span>
-<a href="#" style="font-size: 13px; font-weight: 600">Entrades →</a>
+<a href="entrades.html#partit-masc-bilbao" style="font-size: 13px; font-weight: 600">Entrades →</a>
 </div>
 </div>
 </div>
@@ -525,7 +527,7 @@ a.boira:hover{color:#000}
 <p style="margin: 0; font-size: 19px; line-height: 1.6; max-width: 560px">12.500 veus verd-i-negres. Falta la teva.</p>
 <div style="display: flex; gap: 16px; flex-wrap: wrap; justify-content: center">
 <a href="#socis" style="background: #005441; text-decoration: none; padding: 18px 36px; font-family: 'Bebas Neue', sans-serif; font-size: 26px; letter-spacing: 0.08em">Fes-te soci</a>
-<a href="#" style="border: 2px solid #EBEDEC; text-decoration: none; padding: 16px 32px; font-family: 'Bebas Neue', sans-serif; font-size: 26px; letter-spacing: 0.08em">Compra entrades</a>
+<a href="entrades.html" style="border: 2px solid #EBEDEC; text-decoration: none; padding: 16px 32px; font-family: 'Bebas Neue', sans-serif; font-size: 26px; letter-spacing: 0.08em">Compra entrades</a>
 </div>
 </div>
 </section>
@@ -558,7 +560,7 @@ a.boira:hover{color:#000}
 </div>
 <span style="font-size: 13px; opacity: 0.75">Arquitectes: Esteve Bonell i Francesc Rius · Av. Alfons XIII, s/n, Badalona</span>
 <div style="display: flex; gap: 16px; flex-wrap: wrap">
-<a href="#" style="background: #005441; text-decoration: none; padding: 16px 24px; font-family: 'Bebas Neue', sans-serif; font-size: 22px; letter-spacing: 0.08em">Tria el teu seient</a>
+<a href="entrades.html#partit-masc-bilbao" style="background: #005441; text-decoration: none; padding: 16px 24px; font-family: 'Bebas Neue', sans-serif; font-size: 22px; letter-spacing: 0.08em">Tria el teu seient</a>
 <a href="#" style="border: 2px solid #EBEDEC; text-decoration: none; padding: 14px 24px; font-family: 'Bebas Neue', sans-serif; font-size: 22px; letter-spacing: 0.08em">Com arribar-hi</a>
 </div>
 </div>
@@ -626,7 +628,7 @@ a.boira:hover{color:#000}
 <span style="font-family: 'Bebas Neue', sans-serif; font-size: 64px; line-height: 1; color: #005441">290 €</span>
 <span style="font-size: 14px; color: #2a2f2e">/ temporada · menors de 14, 95 €</span>
 </div>
-<a href="#" style="background: #005441; color: #EBEDEC; text-decoration: none; padding: 16px; text-align: center; font-family: 'Bebas Neue', sans-serif; font-size: 24px; letter-spacing: 0.08em">Fes-te soci</a>
+<a href="entrades.html#abonament-soci" style="background: #005441; color: #EBEDEC; text-decoration: none; padding: 16px; text-align: center; font-family: 'Bebas Neue', sans-serif; font-size: 24px; letter-spacing: 0.08em">Fes-te soci</a>
 </div>
 <div style="background: #111614; padding: 40px; display: flex; flex-direction: column; gap: 20px; border: 2px solid #5fae96">
 <div style="display: flex; justify-content: space-between; align-items: center; gap: 12px">
@@ -645,7 +647,7 @@ a.boira:hover{color:#000}
 <span style="font-family: 'Bebas Neue', sans-serif; font-size: 64px; line-height: 1; color: #5fae96">59 €</span>
 <span style="font-size: 14px">/ any · 10 € van a la Fundació</span>
 </div>
-<a href="#" style="background: #5fae96; color: #000000; text-decoration: none; padding: 16px; text-align: center; font-family: 'Bebas Neue', sans-serif; font-size: 24px; letter-spacing: 0.08em">Fes-te aficionat</a>
+<a href="entrades.html#abonament-solidari" style="background: #5fae96; color: #000000; text-decoration: none; padding: 16px; text-align: center; font-family: 'Bebas Neue', sans-serif; font-size: 24px; letter-spacing: 0.08em">Fes-te aficionat</a>
 </div>
 </div>
 <div class="wrap" style="margin-top: 2px">
@@ -655,7 +657,7 @@ a.boira:hover{color:#000}
 <div style="background: #111614; padding: 24px; display: flex; flex-direction: column; gap: 4px"><span style="font-family: 'Bebas Neue', sans-serif; font-size: 48px; line-height: 1">34</span><span style="font-size: 13px; opacity: 0.85">països amb penyistes</span></div>
 </div>
 <div style="display: flex; justify-content: center; margin-top: 24px">
-<a href="#" style="font-size: 14px; font-weight: 600">Ja ets soci o aficionat? Accedeix al teu compte →</a>
+<a href="entrades.html#les-meves" style="font-size: 14px; font-weight: 600">Ja ets soci o aficionat? Accedeix al teu compte →</a>
 </div>
 </div>
 </section>
@@ -694,16 +696,16 @@ const team = this.state.team || 'masc';
 const data = {
 masc: { name: 'Primer equip · Lliga Endesa', list: [
 { day: '25 oct', when: 'Dg · 12:00', rival: 'FIATC Girona', comp: 'Lliga Endesa · J5', casa: false },
-{ day: '1 nov', when: 'Dg · 12:00', rival: 'Surne Bilbao', comp: 'Lliga Endesa · J6', casa: true },
+{ day: '1 nov', when: 'Dg · 12:00', rival: 'Surne Bilbao', comp: 'Lliga Endesa · J6', casa: true, id: 'masc-bilbao' },
 { day: '8 nov', when: 'Dg · 13:00', rival: 'La Laguna Tenerife', comp: 'Lliga Endesa · J7', casa: false }
 ] },
 fem: { name: 'Femení · LF Challenge', list: [
 { day: '25 oct', when: 'Dg · 12:00', rival: 'Osés Construcción', comp: 'LF Challenge', casa: false },
-{ day: '31 oct', when: 'Ds · 19:00', rival: 'Recoletas Zamora', comp: 'LF Challenge · J8', casa: true }
+{ day: '31 oct', when: 'Ds · 19:00', rival: 'Recoletas Zamora', comp: 'LF Challenge · J8', casa: true, id: 'fem-zamora' }
 ] },
 u22: { name: 'U22 · Lliga U', list: [
 { day: '24 oct', when: 'Dv', rival: 'Euskaltax', comp: 'Lliga U · J5', casa: false },
-{ day: '30 oct', when: 'Dv · 20:15', rival: 'UCAM Murcia Juver', comp: 'Lliga U · J6', casa: true }
+{ day: '30 oct', when: 'Dv · 20:15', rival: 'UCAM Murcia Juver', comp: 'Lliga U · J6', casa: true, id: 'u22-ucam' }
 ] },
 bcr: { name: 'Menarini BCR · Superlliga BSR', list: [] }
 };
@@ -891,7 +893,7 @@ loop();
       ? '<span style="background:#005441;padding:5px 9px;font-size:11px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase">Casa</span>'
       : '<span style="border:1px solid rgba(235,237,236,0.5);padding:4px 8px;font-size:11px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase">Fora</span>';
     var cta = m.casa
-      ? '<a href="#" style="background:#005441;text-decoration:none;padding:12px 22px;font-family:\'Bebas Neue\',sans-serif;font-size:20px;letter-spacing:0.08em">Entrades</a>'
+      ? '<a href="entrades.html' + (m.id ? '#partit-' + m.id : '') + '" style="background:#005441;text-decoration:none;padding:12px 22px;font-family:\'Bebas Neue\',sans-serif;font-size:20px;letter-spacing:0.08em">Entrades</a>'
       : '<a href="#" style="text-decoration:none;padding:12px 4px;font-family:\'Bebas Neue\',sans-serif;font-size:20px;letter-spacing:0.08em;color:#5fae96">Prèvia →</a>';
     return '<div style="background:#111614;padding:18px 24px;display:flex;align-items:center;gap:28px;flex-wrap:wrap">' +
       '<div style="display:flex;flex-direction:column;min-width:92px"><span style="font-family:\'Bebas Neue\',sans-serif;font-size:40px;line-height:0.95">' + m.day + '</span>' +

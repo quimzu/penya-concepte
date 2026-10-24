@@ -12,6 +12,7 @@ No és el web oficial del club. Les fotos, l'escut i les marques pertanyen als s
 - Model 3D interactiu del Palau Olímpic de Badalona (three.js).
 - Bloc de socis amb l'opció d'aficionat solidari per a penyistes que viuen lluny.
 - Botiga integrada al mateix web.
+- Taquilla (`entrades.html`): plànol de sectors de l'Olímpic, tria de seient fila a fila, pack de cap de setmana i abonaments, amb pagament simulat. Es genera a partir de la home amb `python3 src/build_entrades.py`, així comparteix capçalera, menú i peu.
 
 ## Com veure-ho
 
